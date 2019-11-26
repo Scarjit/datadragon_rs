@@ -1,4 +1,5 @@
 import requests
+import re
 
 r = requests.get("https://cdn.communitydragon.org/endpoints").json()
 
@@ -13,36 +14,36 @@ use std::io;
 """
 
 func_body_1 = """
-    let mut resp = reqwest::get(&format!("URL", ARG_1))?;
+    let resp = reqwest::get(&format!("URL", ARG_1))?;
     let bytes_x = resp.bytes();
     let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
     let mut bvec: Vec<u8> = vec![];
     for byte in bytes {
-        bvec.push(byte.1.unwrap())
+        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
     }
     Ok(bvec)
 }
 
 """
 func_body_2 = """
-    let mut resp = reqwest::get(&format!("URL", ARG_1, ARG_2))?;
+    let resp = reqwest::get(&format!("URL", ARG_1, ARG_2))?;
     let bytes_x = resp.bytes();
     let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
     let mut bvec: Vec<u8> = vec![];
     for byte in bytes {
-        bvec.push(byte.1.unwrap())
+        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
     }
     Ok(bvec)
 }
 
 """
 func_body_3 = """
-    let mut resp = reqwest::get(&format!("URL", ARG_1, ARG_2, ARG_3))?;
+    let resp = reqwest::get(&format!("URL", ARG_1, ARG_2, ARG_3))?;
     let bytes_x = resp.bytes();
     let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
     let mut bvec: Vec<u8> = vec![];
     for byte in bytes {
-        bvec.push(byte.1.unwrap())
+        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
     }
     Ok(bvec)
 }
@@ -63,7 +64,10 @@ def get_name(splits):
         return "get"
     else:
         return x
-        
+
+def snakeify(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
         
 endpdict = dict()
 
@@ -89,7 +93,7 @@ for endpoint in r:
         body += func_body_1        
         for i,a in enumerate(args):
             endpoint = endpoint.replace(":" + a, "{}")
-            body = body.replace("ARG_" + str(i+1), args[i])            
+            body = body.replace("ARG_" + str(i+1), snakeify(args[i]))
         body = body.replace("NAME", name).replace("URL", endpoint)
         endpdict[type+name] = body
         
@@ -98,7 +102,7 @@ for endpoint in r:
         body += func_body_2        
         for i,a in enumerate(args):
             endpoint = endpoint.replace(":" + a, "{}")
-            body = body.replace("ARG_" + str(i+1), args[i])            
+            body = body.replace("ARG_" + str(i+1), snakeify(args[i]))            
         body = body.replace("NAME", name).replace("URL", endpoint)
         endpdict[type+name] = body
     elif a_len == 3:
@@ -106,7 +110,7 @@ for endpoint in r:
         body += func_body_3        
         for i,a in enumerate(args):
             endpoint = endpoint.replace(":" + a, "{}")
-            body = body.replace("ARG_" + str(i+1), args[i])            
+            body = body.replace("ARG_" + str(i+1), snakeify(args[i]))            
         body = body.replace("NAME", name).replace("URL", endpoint)
         endpdict[type+name] = body
     else:
