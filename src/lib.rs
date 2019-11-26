@@ -6,5 +6,8 @@
     clippy::non_ascii_literal,
     clippy::implicit_return,
 )]
+#[macro_use]
+extern crate cached;
+
 pub mod api;
 pub mod tools;
