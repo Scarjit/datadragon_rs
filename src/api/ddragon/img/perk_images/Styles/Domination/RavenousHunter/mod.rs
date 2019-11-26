@@ -9,5 +9,5 @@
 use crate::tools::http::cached_http_byte_request;
 
 pub fn ravenous_hunter() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Domination/RavenousHunter/RavenousHunter.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Domination/RavenousHunter/RavenousHunter.png".to_string())    
 }

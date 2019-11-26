@@ -9,5 +9,5 @@
 use crate::tools::http::cached_http_byte_request;
 
 pub fn lethal_tempo_temp() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/LethalTempo/LethalTempoTemp.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/LethalTempo/LethalTempoTemp.png".to_string())    
 }

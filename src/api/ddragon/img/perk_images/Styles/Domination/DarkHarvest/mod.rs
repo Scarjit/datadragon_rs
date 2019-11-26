@@ -9,5 +9,5 @@
 use crate::tools::http::cached_http_byte_request;
 
 pub fn dark_harvest() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Domination/DarkHarvest/DarkHarvest.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Domination/DarkHarvest/DarkHarvest.png".to_string())    
 }

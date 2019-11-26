@@ -9,5 +9,5 @@
 use crate::tools::http::cached_http_byte_request;
 
 pub fn biscuit_delivery() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png".to_string())    
 }
