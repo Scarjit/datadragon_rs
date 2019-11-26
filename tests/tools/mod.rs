@@ -1,5 +1,5 @@
-use lib::tools::version_cmp::compare;
 use std::cmp::Ordering;
+use datadragon_rs::tools::version_cmp::compare;
 
 #[test]
 pub fn test_compare(){
