@@ -5,17 +5,17 @@
     codegen/ddragon_generator.py
 */
 
-pub mod ApproachVelocity;
-pub mod BonePlating;
-pub mod Chrysalis;
-pub mod Conditioning;
-pub mod Demolish;
-pub mod FontOfLife;
-pub mod GraspOfTheUndying;
-pub mod Guardian;
-pub mod IronSkin;
-pub mod MirrorShell;
-pub mod Overgrowth;
-pub mod Revitalize;
-pub mod SecondWind;
-pub mod VeteranAftershock;
+pub mod approach_velocity;
+pub mod bone_plating;
+pub mod chrysalis;
+pub mod conditioning;
+pub mod demolish;
+pub mod font_of_life;
+pub mod grasp_of_the_undying;
+pub mod guardian;
+pub mod iron_skin;
+pub mod mirror_shell;
+pub mod overgrowth;
+pub mod revitalize;
+pub mod second_wind;
+pub mod veteran_aftershock;

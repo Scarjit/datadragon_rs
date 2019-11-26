@@ -5,6 +5,6 @@
     codegen/ddragon_generator.py
 */
 
-pub mod StatMods;
-pub mod Styles;
-pub mod Template;
+pub mod stat_mods;
+pub mod styles;
+pub mod template;
