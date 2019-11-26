@@ -9,50 +9,28 @@ fileheader = """
     DO NOT EDIT
     codegen/cdragon_generator.py
 */
-use std::io::Read;
-use std::io;
+use crate::tools::http::cached_http_byte_request;
 """
 
 func_body_1 = """
-    let resp = reqwest::get(&format!("URL", ARG_1))?;
-    let bytes_x = resp.bytes();
-    let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
-    let mut bvec: Vec<u8> = vec![];
-    for byte in bytes {
-        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
-    }
-    Ok(bvec)
+    cached_http_byte_request(format!("URL", ARG_1))    
 }
 
 """
-func_body_2 = """
-    let resp = reqwest::get(&format!("URL", ARG_1, ARG_2))?;
-    let bytes_x = resp.bytes();
-    let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
-    let mut bvec: Vec<u8> = vec![];
-    for byte in bytes {
-        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
-    }
-    Ok(bvec)
+func_body_2 = """    
+    cached_http_byte_request(format!("URL", ARG_1, ARG_2))
 }
 
 """
 func_body_3 = """
-    let resp = reqwest::get(&format!("URL", ARG_1, ARG_2, ARG_3))?;
-    let bytes_x = resp.bytes();
-    let bytes = bytes_x.enumerate().collect::<Vec<(usize,Result<u8, io::Error>)>>();
-    let mut bvec: Vec<u8> = vec![];
-    for byte in bytes {
-        bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
-    }
-    Ok(bvec)
+    cached_http_byte_request(format!("URL", ARG_1, ARG_2, ARG_3))
 }
 
 """
 
-function_sig_one = "pub fn NAME(ARG_1: &str) -> Result<Vec<u8>, reqwest::Error>{"
-function_sig_two = "pub fn NAME(ARG_1: &str, ARG_2: &str) -> Result<Vec<u8>, reqwest::Error>{"
-function_sig_three = "pub fn NAME(ARG_1: &str, ARG_2: &str, ARG_3: &str) -> Result<Vec<u8>, reqwest::Error>{"
+function_sig_one = "pub fn NAME(ARG_1: &str) -> Result<Vec<u8>, ()>{"
+function_sig_two = "pub fn NAME(ARG_1: &str, ARG_2: &str) -> Result<Vec<u8>, ()>{"
+function_sig_three = "pub fn NAME(ARG_1: &str, ARG_2: &str, ARG_3: &str) -> Result<Vec<u8>, ()>{"
 
 def get_name(splits):   
     n = []
