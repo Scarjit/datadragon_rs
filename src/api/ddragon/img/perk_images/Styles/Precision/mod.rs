@@ -19,9 +19,9 @@ pub mod PressTheAttack;
 use crate::tools::http::cached_http_byte_request;
 
 pub fn overheal() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Overheal.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Overheal.png".to_string())    
 }
 
 pub fn triumph() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Triumph.png".as_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Triumph.png".to_string())    
 }

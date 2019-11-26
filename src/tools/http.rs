@@ -5,7 +5,7 @@ use reqwest::{Response, Error};
 
 
 cached_result!{
-    MULT: SizedCache<String, Vec<u8>> = SizedCache::with_size(512);
+    BIN_CACHE: SizedCache<String, Vec<u8>> = SizedCache::with_size(512);
     fn cached_http_byte_request(url: String) -> Result<Vec<u8>, ()> = {
         match reqwest::get(&url) {
         Ok(v) => {
@@ -16,6 +16,20 @@ cached_result!{
                 bvec.push(byte.1.expect("Couldn't convert Bytes to Vec<u8>"))
             }
             return Ok(bvec);
+        },
+        Err(e) => {
+            Err(())
+        },
+    }
+    }
+}
+
+cached_result!{
+    STRING_CACHE: SizedCache<String, Vec<u8>> = SizedCache::with_size(512);
+    fn cached_http_json_request(url: String) -> Result<String, ()> = {
+        match reqwest::get(&url) {
+        Ok(v) => {
+            return Ok(v.text());
         },
         Err(e) => {
             Err(())

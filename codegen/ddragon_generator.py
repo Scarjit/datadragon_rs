@@ -26,13 +26,13 @@ use crate::tools::http::cached_http_json_request;
 
 func_body_bytes = """
 pub fn NAME() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request(URL.as_string())    
+    cached_http_byte_request(URL.to_string())    
 }
 """
 
 func_body_json = """
 pub fn NAME() -> Result<String, ()>{
-    cached_http_json_request(URL.as_string())    
+    cached_http_json_request(URL.to_string())    
 }
 """
 
@@ -79,7 +79,9 @@ def generate_folders(foldername):
  
 
 def generate_func_name(file):
-    return snakeify(file.split(".")[0])
+    if file[0].isdigit():
+        file = "f" + file
+    return snakeify(file.split(".")[0]).replace(".", "_").replace("-", "_")
 
 def generate_func_url(file_root, file):
     url = "{}/{}".format(file_root.replace("\\", "/"), file)
