@@ -5,17 +5,17 @@
     codegen/ddragon_generator.py
 */
 
-pub mod CheapShot;
-pub mod DarkHarvest;
-pub mod Electrocute;
-pub mod EyeballCollection;
-pub mod GhostPoro;
-pub mod HailOfBlades;
-pub mod IngeniousHunter;
-pub mod Predator;
-pub mod RavenousHunter;
-pub mod RelentlessHunter;
-pub mod SuddenImpact;
-pub mod TasteOfBlood;
-pub mod UltimateHunter;
-pub mod ZombieWard;
+pub mod cheap_shot;
+pub mod dark_harvest;
+pub mod electrocute;
+pub mod eyeball_collection;
+pub mod ghost_poro;
+pub mod hail_of_blades;
+pub mod ingenious_hunter;
+pub mod predator;
+pub mod ravenous_hunter;
+pub mod relentless_hunter;
+pub mod sudden_impact;
+pub mod taste_of_blood;
+pub mod ultimate_hunter;
+pub mod zombie_ward;

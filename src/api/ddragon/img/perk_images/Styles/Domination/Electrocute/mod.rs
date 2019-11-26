@@ -8,6 +8,6 @@
 
 use crate::tools::http::cached_http_byte_request;
 
-pub fn electrocute() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Domination/Electrocute/Electrocute.png".to_string())    
+pub fn get() -> Result<Vec<u8>, ()>{
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/styles/domination/electrocute/Electrocute.png".to_string())    
 }

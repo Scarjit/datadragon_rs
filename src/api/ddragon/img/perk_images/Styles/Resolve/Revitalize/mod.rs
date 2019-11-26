@@ -8,6 +8,6 @@
 
 use crate::tools::http::cached_http_byte_request;
 
-pub fn revitalize() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Resolve/Revitalize/Revitalize.png".to_string())    
+pub fn get() -> Result<Vec<u8>, ()>{
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/styles/resolve/revitalize/Revitalize.png".to_string())    
 }

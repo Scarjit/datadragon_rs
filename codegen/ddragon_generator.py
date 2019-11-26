@@ -58,9 +58,20 @@ def gen_file_root(root):
     if root[0].isdigit():
         root = "d" + root
     
+    root = snakeify(root)
     if root[0] == '_':
         root = root[1:]
+    
+    if root.split("\\")[-1:][0].startswith("_"):
+        s = root.split("\\")
         
+        f = []
+        for x in s:
+            if x.startswith("_"):
+                x = x[1:]
+            f.append(x)        
+        root = '\\'.join(f)
+    
     return DDRAGON_ROOT + root
 
 def generate_folders(foldername):
@@ -78,10 +89,30 @@ def generate_folders(foldername):
             pass
  
 
-def generate_func_name(file):
-    if file[0].isdigit():
-        file = "f" + file
-    return snakeify(file.split(".")[0]).replace(".", "_").replace("-", "_")
+def generate_func_name(file_root, file):
+    snak = snakeify(file.split(".")[0]).replace(".", "_").replace("-", "_")
+    
+    mod_name = file_root.split("\\")[-1:][0]
+    if mod_name in snak:
+        snak = snak.replace(mod_name, "")
+        
+    if len(snak) == 0:
+        snak = "get"
+    
+    if snak[0].isdigit():
+        snak = "f" + snak
+    
+    snak = snak.replace("__", "_")
+    
+    if snak[0] == '_':
+        snak = snak[1:]
+    
+    if snak[-1] == '_':
+        snak = snak[:-1]
+        
+    snak = snak.replace("__", "_")
+        
+    return snak
 
 def generate_func_url(file_root, file):
     url = "{}/{}".format(file_root.replace("\\", "/"), file)
@@ -107,7 +138,7 @@ def generate_file_sig(file_root, files):
                     j_header = True
                     file_body += use_j_r                    
             
-                func_name = generate_func_name(file)
+                func_name = generate_func_name(file_root, file)
                 func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)
                 fbody = fbody.replace("URL", func_url)
@@ -119,7 +150,7 @@ def generate_file_sig(file_root, files):
                     b_header = True
                     file_body += use_b_r    
                     
-                func_name = generate_func_name(file)
+                func_name = generate_func_name(file_root,file)
                 func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)
                 fbody = fbody.replace("URL", func_url)

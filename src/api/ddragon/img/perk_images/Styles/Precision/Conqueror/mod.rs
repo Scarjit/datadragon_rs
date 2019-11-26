@@ -8,6 +8,6 @@
 
 use crate::tools::http::cached_http_byte_request;
 
-pub fn conqueror() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Conqueror/Conqueror.png".to_string())    
+pub fn get() -> Result<Vec<u8>, ()>{
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/styles/precision/conqueror/Conqueror.png".to_string())    
 }

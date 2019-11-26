@@ -1,7 +1,6 @@
 use std::io::Read;
 use std::io;
 use cached::SizedCache;
-use reqwest::{Response, Error};
 
 
 cached_result!{
@@ -17,7 +16,7 @@ cached_result!{
             }
             return Ok(bvec);
         },
-        Err(e) => {
+        Err(_) => {
             Err(())
         },
     }
@@ -25,15 +24,16 @@ cached_result!{
 }
 
 cached_result!{
-    STRING_CACHE: SizedCache<String, Vec<u8>> = SizedCache::with_size(512);
+    STRING_CACHE: SizedCache<String, String> = SizedCache::with_size(512);
     fn cached_http_json_request(url: String) -> Result<String, ()> = {
         match reqwest::get(&url) {
-        Ok(v) => {
-            return Ok(v.text());
-        },
-        Err(e) => {
-            Err(())
-        },
-    }
+            Ok(mut v) => {
+                let text = v.text().expect("Couldn't convert answer to text");
+                return Ok(text);
+            },
+            Err(_) => {
+                Err(())
+            },
+        }
     }
 }

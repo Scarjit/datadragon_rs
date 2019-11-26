@@ -5,18 +5,18 @@
     codegen/ddragon_generator.py
 */
 
-pub mod AbsoluteFocus;
-pub mod ArcaneComet;
-pub mod Celerity;
-pub mod GatheringStorm;
-pub mod LastStand;
-pub mod ManaflowBand;
-pub mod NimbusCloak;
-pub mod NullifyingOrb;
-pub mod PhaseRush;
-pub mod Scorch;
-pub mod SummonAery;
-pub mod TheUltimateHat;
-pub mod Transcendence;
-pub mod Unflinching;
-pub mod Waterwalking;
+pub mod absolute_focus;
+pub mod arcane_comet;
+pub mod celerity;
+pub mod gathering_storm;
+pub mod last_stand;
+pub mod manaflow_band;
+pub mod nimbus_cloak;
+pub mod nullifying_orb;
+pub mod phase_rush;
+pub mod scorch;
+pub mod summon_aery;
+pub mod the_ultimate_hat;
+pub mod transcendence;
+pub mod unflinching;
+pub mod waterwalking;

@@ -8,6 +8,6 @@
 
 use crate::tools::http::cached_http_byte_request;
 
-pub fn scorch() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Sorcery/Scorch/Scorch.png".to_string())    
+pub fn get() -> Result<Vec<u8>, ()>{
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/styles/sorcery/scorch/Scorch.png".to_string())    
 }

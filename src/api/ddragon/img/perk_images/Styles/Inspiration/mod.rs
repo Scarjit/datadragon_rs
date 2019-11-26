@@ -5,16 +5,16 @@
     codegen/ddragon_generator.py
 */
 
-pub mod BiscuitDelivery;
-pub mod CelestialBody;
-pub mod CosmicInsight;
-pub mod FuturesMarket;
-pub mod GlacialAugment;
-pub mod HextechFlashtraption;
-pub mod Kleptomancy;
-pub mod MagicalFootwear;
-pub mod MasterKey;
-pub mod MinionDematerializer;
-pub mod PerfectTiming;
-pub mod TimeWarpTonic;
-pub mod UnsealedSpellbook;
+pub mod biscuit_delivery;
+pub mod celestial_body;
+pub mod cosmic_insight;
+pub mod futures_market;
+pub mod glacial_augment;
+pub mod hextech_flashtraption;
+pub mod kleptomancy;
+pub mod magical_footwear;
+pub mod master_key;
+pub mod minion_dematerializer;
+pub mod perfect_timing;
+pub mod time_warp_tonic;
+pub mod unsealed_spellbook;
