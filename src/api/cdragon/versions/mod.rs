@@ -9,12 +9,12 @@ pub fn get() -> &'static Vec<String>{
         let url = "http://raw.communitydragon.org/";
         let site_content = reqwest::get(url).expect("CDragon is not reachable").text().expect("Couldn't convert to string");
 
-        let table = table_extract::Table::find_first(&site_content).unwrap();
+        let table = table_extract::Table::find_first(&site_content).expect("Couldn't find endpoint table on website");
 
         let mut vs: Vec<String> = vec![];
         let ree = Regex::new(r"\d.\d+").expect("Couldn't compile regex");
         for row in &table{
-            let cell =  row.get(&"<a href=\"?C=N&amp;O=A\">File Name</a>&nbsp;<a href=\"?C=N&amp;O=D\">&nbsp;↓&nbsp;</a>").unwrap();
+            let cell =  row.get("<a href=\"?C=N&amp;O=A\">File Name</a>&nbsp;<a href=\"?C=N&amp;O=D\">&nbsp;↓&nbsp;</a>").unwrap();
             match ree.find(cell) {
                 None => {},
                 Some(v) => {
