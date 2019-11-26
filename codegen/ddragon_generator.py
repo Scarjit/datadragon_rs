@@ -13,7 +13,15 @@ file_header = """
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
+
+"""
+
+use_b_r = """
 use crate::tools::http::cached_http_byte_request;
+"""
+
+use_j_r = """
+use crate::tools::http::cached_http_json_request;
 """
 
 func_body_bytes = """
@@ -79,6 +87,9 @@ def generate_func_url(file_root, file):
     return url
 
 def generate_file_sig(file_root, files):
+    b_header = False
+    j_header = False
+
     file_body = file_header
     for x in os.listdir(file_root):
         x = file_root + "\\" + x
@@ -90,6 +101,10 @@ def generate_file_sig(file_root, files):
         if not "manifest" in file:
             if file.endswith(".json"):
                 fbody = func_body_json
+                if not j_header:
+                    j_header = True
+                    file_body += use_j_r                    
+            
                 func_name = generate_func_name(file)
                 func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)
@@ -98,6 +113,10 @@ def generate_file_sig(file_root, files):
                 
             elif file.endswith(".png") or file.endswith(".jpg") or file.endswith(".gif"):
                 fbody = func_body_bytes
+                if not b_header:
+                    b_header = True
+                    file_body += use_b_r    
+                    
                 func_name = generate_func_name(file)
                 func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)

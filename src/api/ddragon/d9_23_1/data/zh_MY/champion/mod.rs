@@ -4,7 +4,9 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
-use crate::tools::http::cached_http_byte_request;
+
+
+use crate::tools::http::cached_http_json_request;
 
 pub fn aatrox() -> Result<String, ()>{
     cached_http_json_request("https://ddragon.leagueoflegends.com/cdn/d9_23_1/data/zh_MY/champion/Aatrox.json".as_string())    

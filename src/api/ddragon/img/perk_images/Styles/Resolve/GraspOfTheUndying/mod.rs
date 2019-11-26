@@ -4,6 +4,8 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
+
+
 use crate::tools::http::cached_http_byte_request;
 
 pub fn grasp_of_the_undying() -> Result<Vec<u8>, ()>{

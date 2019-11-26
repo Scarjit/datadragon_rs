@@ -4,6 +4,8 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
+
+
 use crate::tools::http::cached_http_byte_request;
 
 pub fn summon_aery() -> Result<Vec<u8>, ()>{
