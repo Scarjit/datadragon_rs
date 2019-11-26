@@ -4,12 +4,14 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
-use crate::tools::http::cached_http_byte_request;
+
 pub mod Domination;
 pub mod Inspiration;
 pub mod Precision;
 pub mod Resolve;
 pub mod Sorcery;
+
+use crate::tools::http::cached_http_byte_request;
 
 pub fn 7200__domination() -> Result<Vec<u8>, ()>{
     cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/7200_Domination.png".as_string())    

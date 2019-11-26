@@ -4,8 +4,10 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
-use crate::tools::http::cached_http_byte_request;
+
 pub mod Celebration;
+
+use crate::tools::http::cached_http_byte_request;
 
 pub fn bp_ll__egg_1__icon() -> Result<Vec<u8>, ()>{
     cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/d9_23_1/img/mission/TFT/BP_LL_Egg_1_Icon.png".as_string())    

@@ -4,6 +4,8 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
+
+
 use crate::tools::http::cached_http_byte_request;
 
 pub fn stat_mods_adaptive_force_icon() -> Result<Vec<u8>, ()>{

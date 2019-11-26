@@ -4,7 +4,7 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
-use crate::tools::http::cached_http_byte_request;
+
 pub mod Conqueror;
 pub mod CoupDeGrace;
 pub mod CutDown;
@@ -15,6 +15,8 @@ pub mod LegendTenacity;
 pub mod LethalTempo;
 pub mod PresenceOfMind;
 pub mod PressTheAttack;
+
+use crate::tools::http::cached_http_byte_request;
 
 pub fn overheal() -> Result<Vec<u8>, ()>{
     cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/Styles/Precision/Overheal.png".as_string())    

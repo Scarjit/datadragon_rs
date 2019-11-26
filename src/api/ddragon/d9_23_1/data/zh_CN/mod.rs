@@ -4,8 +4,10 @@
     DO NOT EDIT
     codegen/ddragon_generator.py
 */
-use crate::tools::http::cached_http_byte_request;
+
 pub mod champion;
+
+use crate::tools::http::cached_http_json_request;
 
 pub fn champion() -> Result<String, ()>{
     cached_http_json_request("https://ddragon.leagueoflegends.com/cdn/d9_23_1/data/zh_CN/champion.json".as_string())    
