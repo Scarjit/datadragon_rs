@@ -186,7 +186,7 @@ def add_serde(froot):
             fin = open(path, "rt", encoding="utf-8")
             
             data = fin.read()
-            data = re.sub(r"\\.+", "", data)
+            data = re.sub(r"//.*", "", data)
             
             data = data.replace(serde_in_str, serde_str)
             
