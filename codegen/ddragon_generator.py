@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-DDRAGON_ROOT = "..\\src\\api\\ddragon_raw\\"
+DDRAGON_ROOT = "..\\src\\api\\ddragon\\"
 DDRAGON_WEB_ROOT = "https://ddragon.leagueoflegends.com/cdn/"
            
 
