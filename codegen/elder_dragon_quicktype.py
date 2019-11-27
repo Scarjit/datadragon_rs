@@ -31,12 +31,15 @@ def snakeify(name):
   
 def execute(arg):
     print("Generating {}.rs".format(arg[6]))
-    subprocess.run(arg)
+    try:
+        subprocess.run(arg)
+    except Exception as e:
+        with open("exception.log", "w") as f:
+            f.write("{}\r\n\r\n{}".format(arg, e))
     print("Generated {}.rs".format(arg[6]))
-    
+
 
 def load_champion_jsons(_y):
-    os.mkdir(ELDER_ROOT + "champion\\")
     languages = []
     for x in os.listdir(_y):
         if os.path.isdir(_y + "\\" + x):
@@ -61,8 +64,13 @@ def load_champion_jsons(_y):
             file_dict[j].append(json_path)
         
     args = []
+    args_2 = []
     for k,v in file_dict.items():
         ki = k.replace(".", "_")
+        
+        for x in v:
+            args_2.append(x)
+    
         qt_args = [
             "{}\\npm\\quicktype.cmd".format(os.getenv('APPDATA')),
             "--lang",
@@ -80,6 +88,30 @@ def load_champion_jsons(_y):
             qt_args.append(vx)
         
         args.append(qt_args)
+    
+    qt_args = [
+            "{}\\npm\\quicktype.cmd".format(os.getenv('APPDATA')),
+            "--lang",
+            "rs",
+            "--density",
+            "dense",
+            "--top-level",
+            "combined",
+            "--out",
+            "{}champion\\_combined.rs".format(ELDER_ROOT),
+            "--src",
+            "tmp"
+        ]
+    try:
+        shutil.rmtree("tmp")
+    except FileNotFoundError:
+        pass
+    os.mkdir("tmp")
+    
+    for vx in args_2:
+        shutil.copy(vx, "tmp")
+    
+    args.append(qt_args)
     
     num_cores = multiprocessing.cpu_count()
     results = Parallel(n_jobs=num_cores)(delayed(execute)(i) for i in args)
@@ -145,6 +177,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         pass
     os.mkdir(ELDER_ROOT)
+    os.mkdir(ELDER_ROOT + "champion\\")
     for x in os.listdir(os.getcwd()):
         if os.path.isdir(x):
             if "dragontail" in x:
