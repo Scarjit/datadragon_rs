@@ -20,6 +20,11 @@
 
 use serde::{Serialize, Deserialize};
 extern crate serde_json;
+use self::serde_json::Error;
+
+pub fn serialize(json: &str) -> Result<FioraJson,Error>{
+    serde_json::from_str(json)
+}
 
 use std::collections::HashMap;
 

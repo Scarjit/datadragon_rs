@@ -170,6 +170,11 @@ serde_in_str = "extern crate serde_json;"
 serde_str = """
 use serde::{Serialize, Deserialize};
 extern crate serde_json;
+use self::serde_json::Error;
+
+pub fn serialize(json: &str) -> Result<XTYPE,Error>{
+    serde_json::from_str(json)
+}
 """  
 disclaimer = """
 /*
@@ -188,7 +193,11 @@ def add_serde(froot):
             data = fin.read()
             data = re.sub(r"//.*", "", data)
             
-            data = data.replace(serde_in_str, serde_str)
+            fname = re.findall(r'pub struct \w+', data)[0][11:]            
+            
+            sr = serde_str
+            sr = sr.replace("XTYPE", fname)
+            data = data.replace(serde_in_str, sr)
             
             data = disclaimer + data
             
@@ -213,5 +222,5 @@ if __name__ == "__main__":
                     if y[0].isdigit():
                         load_basic_jsons(os.getcwd() + "\\" + x + "\\" + y + "\\data")
                         load_champion_jsons(os.getcwd() + "\\" + x + "\\" + y + "\\data")
-                        generate_mod_rs(ELDER_ROOT)
                         add_serde(ELDER_ROOT)
+                        generate_mod_rs(ELDER_ROOT)
