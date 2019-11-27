@@ -1,9 +1,3 @@
-
-/*
-    AUTO GENERATED FILE
-    DO NOT EDIT
-    codegen/elder_dragon_quicktype.py
-*/
 pub mod champion;
 pub mod champion_full_json;
 pub mod champion_json;
