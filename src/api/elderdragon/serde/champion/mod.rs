@@ -1,3 +1,9 @@
+
+/*
+    AUTO GENERATED FILE
+    DO NOT EDIT
+    codegen/elder_dragon_quicktype.py
+*/
 pub mod aatrox_json;
 pub mod ahri_json;
 pub mod akali_json;
