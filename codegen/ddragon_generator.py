@@ -89,10 +89,10 @@ def generate_folders(foldername):
             pass
  
 
-def generate_func_name(file_root, file):
+def generate_func_name(_file_root, file):
     snak = snakeify(file.split(".")[0]).replace(".", "_").replace("-", "_")
     
-    mod_name = file_root.split("\\")[-1:][0]
+    mod_name = _file_root.split("\\")[-1:][0]
     if mod_name in snak:
         snak = snak.replace(mod_name, "")
         
@@ -114,12 +114,15 @@ def generate_func_name(file_root, file):
         
     return snak
 
-def generate_func_url(file_root, file):
-    url = "{}/{}".format(file_root.replace("\\", "/"), file)
-    url = "\"" + DDRAGON_WEB_ROOT + '/'.join(url.split("/")[4:]) + "\""
+def generate_func_url(_file_root, file):
+    url = "{}/{}".format(_file_root.replace("\\", "/"), file)
+    url = "\"" + DDRAGON_WEB_ROOT + url + "\""
+    
+    print("{}\t{}\t{}".format(_file_root, file, url))
+    
     return url
 
-def generate_file_sig(file_root, files):
+def generate_file_sig(ofr, file_root, files):
     b_header = False
     j_header = False
 
@@ -138,8 +141,8 @@ def generate_file_sig(file_root, files):
                     j_header = True
                     file_body += use_j_r                    
             
+                func_url = generate_func_url(ofr,file)
                 func_name = generate_func_name(file_root, file)
-                func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)
                 fbody = fbody.replace("URL", func_url)
                 file_body += fbody
@@ -150,7 +153,7 @@ def generate_file_sig(file_root, files):
                     b_header = True
                     file_body += use_b_r    
                     
-                func_name = generate_func_name(file_root,file)
+                func_name = generate_func_name(ofr,file)
                 func_url = generate_func_url(file_root,file)
                 fbody = fbody.replace("NAME", func_name)
                 fbody = fbody.replace("URL", func_url)
@@ -172,7 +175,7 @@ def generate_files(foldername):
             
         file_root = gen_file_root(root)
         
-        sig = generate_file_sig(file_root, files)
+        sig = generate_file_sig(root, file_root, files)
         with open(file_root + "\\mod.rs", "w") as f:
             f.write(sig)
             
