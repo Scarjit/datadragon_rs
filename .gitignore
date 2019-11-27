@@ -4,3 +4,4 @@ Cargo.lock
 /.idea
 .env
 /codegen/dragontail*
+/venv
