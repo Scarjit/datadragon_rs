@@ -165,10 +165,38 @@ def load_basic_jsons(_y):
     
     num_cores = multiprocessing.cpu_count()
     results = Parallel(n_jobs=num_cores)(delayed(execute)(i) for i in args)
-    
 
+serde_in_str = "extern crate serde_json;"
+serde_str = """
+use serde::{Serialize, Deserialize};
+extern crate serde_json;
+"""  
+disclaimer = """
+/*
+    AUTO GENERATED FILE
+    DO NOT EDIT
+    codegen/elder_dragon_quicktype.py
+*/
+"""
+  
+def add_serde(froot):
+    for root, dirs, files in os.walk(froot):
+        for file in files:
+            path = root + "\\" + file
+            fin = open(path, "rt", encoding="utf-8")
+            
+            data = fin.read()
+            data = re.sub(r"\\.+", "", data)
+            
+            data = data.replace(serde_in_str, serde_str)
+            
+            data = disclaimer + data
+            
+            fin.close()
 
-
+            fin = open(path, "wt", encoding="utf-8")
+            fin.write(data)
+            fin.close()
 
 
 if __name__ == "__main__":
@@ -186,3 +214,4 @@ if __name__ == "__main__":
                         load_basic_jsons(os.getcwd() + "\\" + x + "\\" + y + "\\data")
                         load_champion_jsons(os.getcwd() + "\\" + x + "\\" + y + "\\data")
                         generate_mod_rs(ELDER_ROOT)
+                        add_serde(ELDER_ROOT)
