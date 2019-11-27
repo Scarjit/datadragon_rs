@@ -5,6 +5,8 @@
     clippy::missing_inline_in_public_items,
     clippy::non_ascii_literal,
     clippy::implicit_return,
+    clippy::module_name_repetitions,
+    clippy::pub_enum_variant_names,
 )]
 #[macro_use]
 extern crate cached;
