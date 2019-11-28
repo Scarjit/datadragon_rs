@@ -22,7 +22,16 @@ def generate_mod_rs(top_path):
     with open("{}\\mod.rs".format(top_path), "w") as f:
         for fx in files:
             if fx != "mod.rs":
-                f.write("pub mod {};\n".format(fx[:-3]))
+                name = fx[:-3]
+                
+                if name == "serde":
+                    f.write("""#[cfg(feature = "elder_serde")]
+pub mod serde;\n""")
+                elif name == "champion":
+                    f.write("""#[cfg(feature = "elder_champ_gen")]
+pub mod champion;\n""")
+                else:
+                    f.write("pub mod {};\n".format(name))
 
 def snakeify(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
