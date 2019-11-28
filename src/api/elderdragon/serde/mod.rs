@@ -1,3 +1,4 @@
+#[cfg(feature = "elder_champ_gen")]
 pub mod champion;
 pub mod champion_full_json;
 pub mod champion_json;
