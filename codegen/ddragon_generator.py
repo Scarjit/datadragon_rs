@@ -117,6 +117,7 @@ def generate_func_name(_file_root, file):
 def generate_func_url(_file_root, file):
     url = "{}/{}".format(_file_root.replace("\\", "/"), file)
     url = "\"" + DDRAGON_WEB_ROOT + url + "\""
+    url = url.replace("../src/api/ddragon/", "")
     
     print("{}\t{}\t{}".format(_file_root, file, url))
     

@@ -9,5 +9,5 @@
 use crate::tools::http::cached_http_byte_request;
 
 pub fn celestial_body() -> Result<Vec<u8>, ()>{
-    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/../src/api/ddragon_raw/img/perk_images/styles/inspiration/celestial_body/CelestialBody.png".to_string())    
+    cached_http_byte_request("https://ddragon.leagueoflegends.com/cdn/img/perk_images/styles/inspiration/celestial_body/CelestialBody.png".to_string())    
 }
