@@ -1,6 +1,6 @@
 language: rust
 rust:
-  - nightly
+  - 2019-11-28
 cache: cargo
 os:
   - linux
