@@ -31,24 +31,24 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct LanguageJson {
     #[serde(rename = "type")]
-    language_json_type: Type,
-    version: Version,
-    data: HashMap<String, String>,
-    tree: Tree,
+    pub language_json_type: Type,
+    pub version: Version,
+    pub data: HashMap<String, String>,
+    pub tree: Tree,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Tree {
     #[serde(rename = "searchKeyIgnore")]
-    search_key_ignore: SearchKeyIgnore,
+    pub search_key_ignore: SearchKeyIgnore,
     #[serde(rename = "searchKeyRemap")]
-    search_key_remap: Vec<SearchKeyRemap>,
+    pub search_key_remap: Vec<SearchKeyRemap>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SearchKeyRemap {
-    k: String,
-    v: String,
+    pub k: String,
+    pub v: String,
 }
 
 #[derive(Serialize, Deserialize)]

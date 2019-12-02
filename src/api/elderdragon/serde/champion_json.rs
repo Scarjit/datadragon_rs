@@ -31,44 +31,44 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct ChampionJson {
     #[serde(rename = "type")]
-    champion_json_type: Type,
-    format: Format,
-    version: Version,
-    data: HashMap<String, Datum>,
+    pub champion_json_type: Type,
+    pub format: Format,
+    pub version: Version,
+    pub data: HashMap<String, Datum>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
-    version: Version,
-    id: String,
-    key: String,
-    name: String,
-    title: String,
-    blurb: String,
-    info: Info,
-    image: Image,
-    tags: Vec<Tag>,
-    partype: String,
-    stats: HashMap<String, f64>,
+    pub version: Version,
+    pub id: String,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub blurb: String,
+    pub info: Info,
+    pub image: Image,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub stats: HashMap<String, f64>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: String,
-    sprite: Sprite,
-    group: Type,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: Type,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Info {
-    attack: i64,
-    defense: i64,
-    magic: i64,
-    difficulty: i64,
+    pub attack: i64,
+    pub defense: i64,
+    pub magic: i64,
+    pub difficulty: i64,
 }
 
 #[derive(Serialize, Deserialize)]

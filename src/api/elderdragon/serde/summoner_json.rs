@@ -31,41 +31,41 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct SummonerJson {
     #[serde(rename = "type")]
-    summoner_json_type: Type,
-    version: Version,
-    data: HashMap<String, Datum>,
+    pub summoner_json_type: Type,
+    pub version: Version,
+    pub data: HashMap<String, Datum>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
-    id: Id,
-    name: String,
-    description: String,
-    tooltip: String,
-    maxrank: i64,
-    cooldown: Vec<f64>,
+    pub id: Id,
+    pub name: String,
+    pub description: String,
+    pub tooltip: String,
+    pub maxrank: i64,
+    pub cooldown: Vec<f64>,
     #[serde(rename = "cooldownBurn")]
-    cooldown_burn: String,
-    cost: Vec<i64>,
+    pub cooldown_burn: String,
+    pub cost: Vec<i64>,
     #[serde(rename = "costBurn")]
-    cost_burn: String,
-    datavalues: Datavalues,
-    effect: Vec<Option<Vec<f64>>>,
+    pub cost_burn: String,
+    pub datavalues: Datavalues,
+    pub effect: Vec<Option<Vec<f64>>>,
     #[serde(rename = "effectBurn")]
-    effect_burn: Vec<Option<String>>,
-    vars: Vec<Var>,
-    key: String,
+    pub effect_burn: Vec<Option<String>>,
+    pub vars: Vec<Var>,
+    pub key: String,
     #[serde(rename = "summonerLevel")]
-    summoner_level: i64,
-    modes: Vec<Mode>,
+    pub summoner_level: i64,
+    pub modes: Vec<Mode>,
     #[serde(rename = "costType")]
-    cost_type: String,
-    maxammo: String,
-    range: Vec<i64>,
+    pub cost_type: String,
+    pub maxammo: String,
+    pub range: Vec<i64>,
     #[serde(rename = "rangeBurn")]
-    range_burn: String,
-    image: Image,
-    resource: String,
+    pub range_burn: String,
+    pub image: Image,
+    pub resource: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -74,20 +74,20 @@ pub struct Datavalues {
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: Full,
-    sprite: Sprite,
-    group: Group,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: Group,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Var {
-    link: Link,
-    coeff: Coeff,
-    key: Key,
+    pub link: Link,
+    pub coeff: Coeff,
+    pub key: Key,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -118,41 +118,6 @@ pub enum Id {
     SummonerTeleport,
 }
 
-#[derive(Serialize, Deserialize)]
-pub enum Full {
-    #[serde(rename = "SummonerBarrier.png")]
-    SummonerBarrierPng,
-    #[serde(rename = "SummonerBoost.png")]
-    SummonerBoostPng,
-    #[serde(rename = "SummonerDot.png")]
-    SummonerDotPng,
-    #[serde(rename = "SummonerExhaust.png")]
-    SummonerExhaustPng,
-    #[serde(rename = "SummonerFlash.png")]
-    SummonerFlashPng,
-    #[serde(rename = "SummonerHaste.png")]
-    SummonerHastePng,
-    #[serde(rename = "SummonerHeal.png")]
-    SummonerHealPng,
-    #[serde(rename = "SummonerMana.png")]
-    SummonerManaPng,
-    #[serde(rename = "SummonerOdysseyFlash.png")]
-    SummonerOdysseyFlashPng,
-    #[serde(rename = "SummonerOdysseyRevive.png")]
-    SummonerOdysseyRevivePng,
-    #[serde(rename = "SummonerPoroRecall.png")]
-    SummonerPoroRecallPng,
-    #[serde(rename = "SummonerPoroThrow.png")]
-    SummonerPoroThrowPng,
-    #[serde(rename = "SummonerSmite.png")]
-    SummonerSmitePng,
-    #[serde(rename = "SummonerSnowURFSnowball_Mark.png")]
-    SummonerSnowUrfSnowballMarkPng,
-    #[serde(rename = "SummonerSnowball.png")]
-    SummonerSnowballPng,
-    #[serde(rename = "SummonerTeleport.png")]
-    SummonerTeleportPng,
-}
 
 #[derive(Serialize, Deserialize)]
 pub enum Group {

@@ -31,158 +31,158 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct Aatrox {
     #[serde(rename = "type")]
-    aatrox_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AatroxData,
+    pub aatrox_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AatroxData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AatroxData {
     #[serde(rename = "Aatrox")]
-    aatrox: PuneHedgehog,
+    pub aatrox: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PuneHedgehog {
-    id: String,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: String,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<PurpleRecommended>,
+    pub id: String,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<PurpleRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: String,
-    sprite: Sprite,
-    group: GroupEnum,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: GroupEnum,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Info {
-    attack: i64,
-    defense: i64,
-    magic: i64,
-    difficulty: i64,
+    pub attack: i64,
+    pub defense: i64,
+    pub magic: i64,
+    pub difficulty: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Passive {
-    name: String,
-    description: String,
-    image: Image,
+    pub name: String,
+    pub description: String,
+    pub image: Image,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PurpleRecommended {
-    champion: String,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: String,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: Option<i64>,
+    pub custom_tag: String,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
     #[serde(rename = "extenOrnnPage")]
-    exten_ornn_page: Option<bool>,
+    pub exten_ornn_page: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Block {
     #[serde(rename = "type")]
-    block_type: BlockType,
+    pub block_type: BlockType,
     #[serde(rename = "recMath")]
-    rec_math: Option<bool>,
+    pub rec_math: Option<bool>,
     #[serde(rename = "recSteps")]
-    rec_steps: Option<bool>,
+    pub rec_steps: Option<bool>,
     #[serde(rename = "minSummonerLevel")]
-    min_summoner_level: Option<i64>,
+    pub min_summoner_level: Option<i64>,
     #[serde(rename = "maxSummonerLevel")]
-    max_summoner_level: Option<i64>,
+    pub max_summoner_level: Option<i64>,
     #[serde(rename = "showIfSummonerSpell")]
-    show_if_summoner_spell: Option<IfSummonerSpell>,
+    pub show_if_summoner_spell: Option<IfSummonerSpell>,
     #[serde(rename = "hideIfSummonerSpell")]
-    hide_if_summoner_spell: Option<IfSummonerSpell>,
+    pub hide_if_summoner_spell: Option<IfSummonerSpell>,
     #[serde(rename = "appendAfterSection")]
-    append_after_section: Option<String>,
+    pub append_after_section: Option<String>,
     #[serde(rename = "visibleWithAllOf")]
-    visible_with_all_of: Option<Vec<Of>>,
+    pub visible_with_all_of: Option<Vec<Of>>,
     #[serde(rename = "hiddenWithAnyOf")]
-    hidden_with_any_of: Option<Vec<Of>>,
-    items: Vec<Item>,
+    pub hidden_with_any_of: Option<Vec<Of>>,
+    pub items: Vec<Item>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Item {
-    id: String,
-    count: i64,
+    pub id: String,
+    pub count: i64,
     #[serde(rename = "hideCount")]
-    hide_count: Option<bool>,
-    hidecount: Option<bool>,
+    pub hide_count: Option<bool>,
+    pub hidecount: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Skin {
-    id: String,
-    num: i64,
-    name: String,
-    chromas: bool,
+    pub id: String,
+    pub num: i64,
+    pub name: String,
+    pub chromas: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Spell {
-    id: String,
-    name: String,
-    description: String,
-    tooltip: String,
-    leveltip: Option<Leveltip>,
-    maxrank: i64,
-    cooldown: Vec<f64>,
+    pub id: String,
+    pub name: String,
+    pub description: String,
+    pub tooltip: String,
+    pub leveltip: Option<Leveltip>,
+    pub maxrank: i64,
+    pub cooldown: Vec<f64>,
     #[serde(rename = "cooldownBurn")]
-    cooldown_burn: String,
-    cost: Vec<i64>,
+    pub cooldown_burn: String,
+    pub cost: Vec<i64>,
     #[serde(rename = "costBurn")]
-    cost_burn: String,
-    datavalues: Datavalues,
-    effect: Vec<Option<Vec<f64>>>,
+    pub cost_burn: String,
+    pub datavalues: Datavalues,
+    pub effect: Vec<Option<Vec<f64>>>,
     #[serde(rename = "effectBurn")]
-    effect_burn: Vec<Option<String>>,
-    vars: Vec<Var>,
+    pub effect_burn: Vec<Option<String>>,
+    pub vars: Vec<Var>,
     #[serde(rename = "costType")]
-    cost_type: CostType,
-    maxammo: String,
-    range: Vec<i64>,
+    pub cost_type: CostType,
+    pub maxammo: String,
+    pub range: Vec<i64>,
     #[serde(rename = "rangeBurn")]
-    range_burn: String,
-    image: Image,
-    resource: Option<String>,
+    pub range_burn: String,
+    pub image: Image,
+    pub resource: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -191,2428 +191,2428 @@ pub struct Datavalues {
 
 #[derive(Serialize, Deserialize)]
 pub struct Leveltip {
-    label: Vec<String>,
-    effect: Vec<String>,
+    pub label: Vec<String>,
+    pub effect: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Var {
-    link: Link,
-    coeff: Coeff,
-    key: Key,
+    pub link: Link,
+    pub coeff: Coeff,
+    pub key: Key,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ahri {
     #[serde(rename = "type")]
-    ahri_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AhriData,
+    pub ahri_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AhriData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AhriData {
     #[serde(rename = "Ahri")]
-    ahri: HammerfestPonies,
+    pub ahri: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct HammerfestPonies {
-    id: String,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<FluffyRecommended>,
+    pub id: String,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<FluffyRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FluffyRecommended {
-    champion: String,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: String,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: Option<String>,
-    sortrank: Option<i64>,
+    pub custom_tag: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
-    priority: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
+    pub priority: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Akali {
     #[serde(rename = "type")]
-    akali_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AkaliData,
+    pub akali_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AkaliData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AkaliData {
     #[serde(rename = "Akali")]
-    akali: AkaliClass,
+    pub akali: AkaliClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AkaliClass {
-    id: String,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<AkaliRecommended>,
+    pub id: String,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<AkaliRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AkaliRecommended {
-    champion: String,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: String,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
+    pub custom_tag: String,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
-    sortrank: Option<i64>,
+    pub required_perk: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<String>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<String>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanelCurrencyType")]
-    custom_panel_currency_type: Option<String>,
+    pub custom_panel_currency_type: Option<String>,
     #[serde(rename = "customPanelBuffCurrencyName")]
-    custom_panel_buff_currency_name: Option<String>,
+    pub custom_panel_buff_currency_name: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Alistar {
     #[serde(rename = "type")]
-    alistar_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AlistarData,
+    pub alistar_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AlistarData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AlistarData {
     #[serde(rename = "Alistar")]
-    alistar: HammerfestPonies,
+    pub alistar: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Amumu {
     #[serde(rename = "type")]
-    amumu_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AmumuData,
+    pub amumu_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AmumuData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AmumuData {
     #[serde(rename = "Amumu")]
-    amumu: HammerfestPonies,
+    pub amumu: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Anivia {
     #[serde(rename = "type")]
-    anivia_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AniviaData,
+    pub anivia_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AniviaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AniviaData {
     #[serde(rename = "Anivia")]
-    anivia: PurpleAnivia,
+    pub anivia: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PurpleAnivia {
-    id: PurpleId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<AniviaRecommended>,
+    pub id: PurpleId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<AniviaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AniviaRecommended {
-    champion: PurpleId,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: PurpleId,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: Option<i64>,
+    pub custom_tag: String,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: bool,
+    pub extension_page: bool,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Annie {
     #[serde(rename = "type")]
-    annie_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AnnieData,
+    pub annie_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AnnieData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AnnieData {
     #[serde(rename = "Annie")]
-    annie: PurpleAnivia,
+    pub annie: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ashe {
     #[serde(rename = "type")]
-    ashe_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AsheData,
+    pub ashe_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AsheData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AsheData {
     #[serde(rename = "Ashe")]
-    ashe: HammerfestPonies,
+    pub ashe: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AurelionSol {
     #[serde(rename = "type")]
-    aurelion_sol_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AurelionSolData,
+    pub aurelion_sol_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AurelionSolData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AurelionSolData {
     #[serde(rename = "AurelionSol")]
-    aurelion_sol: PurpleAnivia,
+    pub aurelion_sol: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Azir {
     #[serde(rename = "type")]
-    azir_type: GroupEnum,
-    format: String,
-    version: String,
-    data: AzirData,
+    pub azir_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: AzirData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AzirData {
     #[serde(rename = "Azir")]
-    azir: PuneHedgehog,
+    pub azir: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Bard {
     #[serde(rename = "type")]
-    bard_type: GroupEnum,
-    format: String,
-    version: String,
-    data: BardData,
+    pub bard_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: BardData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BardData {
     #[serde(rename = "Bard")]
-    bard: PuneHedgehog,
+    pub bard: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Blitzcrank {
     #[serde(rename = "type")]
-    blitzcrank_type: GroupEnum,
-    format: String,
-    version: String,
-    data: BlitzcrankData,
+    pub blitzcrank_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: BlitzcrankData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BlitzcrankData {
     #[serde(rename = "Blitzcrank")]
-    blitzcrank: PuneHedgehog,
+    pub blitzcrank: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Brand {
     #[serde(rename = "type")]
-    brand_type: GroupEnum,
-    format: String,
-    version: String,
-    data: BrandData,
+    pub brand_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: BrandData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BrandData {
     #[serde(rename = "Brand")]
-    brand: BrandClass,
+    pub brand: BrandClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BrandClass {
-    id: BrandId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<BrandRecommended>,
+    pub id: BrandId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<BrandRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BrandRecommended {
-    champion: BrandId,
-    title: String,
+    pub champion: BrandId,
+    pub title: String,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
-    map: Map,
-    mode: Mode,
-    priority: Option<bool>,
-    blocks: Vec<Block>,
+    pub recommended_type: RecommendedType,
+    pub map: Map,
+    pub mode: Mode,
+    pub priority: Option<bool>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "customTag")]
-    custom_tag: Option<String>,
-    sortrank: Option<i64>,
+    pub custom_tag: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
+    pub custom_panel: Option<serde_json::Value>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Braum {
     #[serde(rename = "type")]
-    braum_type: GroupEnum,
-    format: String,
-    version: String,
-    data: BraumData,
+    pub braum_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: BraumData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BraumData {
     #[serde(rename = "Braum")]
-    braum: PuneHedgehog,
+    pub braum: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Caitlyn {
     #[serde(rename = "type")]
-    caitlyn_type: GroupEnum,
-    format: String,
-    version: String,
-    data: CaitlynData,
+    pub caitlyn_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: CaitlynData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CaitlynData {
     #[serde(rename = "Caitlyn")]
-    caitlyn: HammerfestPonies,
+    pub caitlyn: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Camille {
     #[serde(rename = "type")]
-    camille_type: GroupEnum,
-    format: String,
-    version: String,
-    data: CamilleData,
+    pub camille_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: CamilleData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CamilleData {
     #[serde(rename = "Camille")]
-    camille: PuneHedgehog,
+    pub camille: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Cassiopeia {
     #[serde(rename = "type")]
-    cassiopeia_type: GroupEnum,
-    format: String,
-    version: String,
-    data: CassiopeiaData,
+    pub cassiopeia_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: CassiopeiaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CassiopeiaData {
     #[serde(rename = "Cassiopeia")]
-    cassiopeia: PurpleAnivia,
+    pub cassiopeia: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Chogath {
     #[serde(rename = "type")]
-    chogath_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ChogathData,
+    pub chogath_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ChogathData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ChogathData {
     #[serde(rename = "Chogath")]
-    chogath: HammerfestPonies,
+    pub chogath: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Corki {
     #[serde(rename = "type")]
-    corki_type: GroupEnum,
-    format: String,
-    version: String,
-    data: CorkiData,
+    pub corki_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: CorkiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct CorkiData {
     #[serde(rename = "Corki")]
-    corki: PuneHedgehog,
+    pub corki: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Darius {
     #[serde(rename = "type")]
-    darius_type: GroupEnum,
-    format: String,
-    version: String,
-    data: DariusData,
+    pub darius_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: DariusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DariusData {
     #[serde(rename = "Darius")]
-    darius: PuneHedgehog,
+    pub darius: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Diana {
     #[serde(rename = "type")]
-    diana_type: GroupEnum,
-    format: String,
-    version: String,
-    data: DianaData,
+    pub diana_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: DianaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DianaData {
     #[serde(rename = "Diana")]
-    diana: HammerfestPonies,
+    pub diana: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Draven {
     #[serde(rename = "type")]
-    draven_type: GroupEnum,
-    format: String,
-    version: String,
-    data: DravenData,
+    pub draven_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: DravenData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DravenData {
     #[serde(rename = "Draven")]
-    draven: HammerfestPonies,
+    pub draven: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DrMundo {
     #[serde(rename = "type")]
-    dr_mundo_type: GroupEnum,
-    format: String,
-    version: String,
-    data: DrMundoData,
+    pub dr_mundo_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: DrMundoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct DrMundoData {
     #[serde(rename = "DrMundo")]
-    dr_mundo: PuneHedgehog,
+    pub dr_mundo: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ekko {
     #[serde(rename = "type")]
-    ekko_type: GroupEnum,
-    format: String,
-    version: String,
-    data: EkkoData,
+    pub ekko_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: EkkoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EkkoData {
     #[serde(rename = "Ekko")]
-    ekko: PuneHedgehog,
+    pub ekko: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Elise {
     #[serde(rename = "type")]
-    elise_type: GroupEnum,
-    format: String,
-    version: String,
-    data: EliseData,
+    pub elise_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: EliseData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EliseData {
     #[serde(rename = "Elise")]
-    elise: PuneHedgehog,
+    pub elise: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Evelynn {
     #[serde(rename = "type")]
-    evelynn_type: GroupEnum,
-    format: String,
-    version: String,
-    data: EvelynnData,
+    pub evelynn_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: EvelynnData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EvelynnData {
     #[serde(rename = "Evelynn")]
-    evelynn: PuneHedgehog,
+    pub evelynn: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ezreal {
     #[serde(rename = "type")]
-    ezreal_type: GroupEnum,
-    format: String,
-    version: String,
-    data: EzrealData,
+    pub ezreal_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: EzrealData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct EzrealData {
     #[serde(rename = "Ezreal")]
-    ezreal: PuneHedgehog,
+    pub ezreal: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Fiddlesticks {
     #[serde(rename = "type")]
-    fiddlesticks_type: GroupEnum,
-    format: String,
-    version: String,
-    data: FiddlesticksData,
+    pub fiddlesticks_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: FiddlesticksData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FiddlesticksData {
     #[serde(rename = "Fiddlesticks")]
-    fiddlesticks: PuneHedgehog,
+    pub fiddlesticks: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Fiora {
     #[serde(rename = "type")]
-    fiora_type: GroupEnum,
-    format: String,
-    version: String,
-    data: FioraData,
+    pub fiora_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: FioraData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FioraData {
     #[serde(rename = "Fiora")]
-    fiora: PuneHedgehog,
+    pub fiora: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Fizz {
     #[serde(rename = "type")]
-    fizz_type: GroupEnum,
-    format: String,
-    version: String,
-    data: FizzData,
+    pub fizz_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: FizzData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FizzData {
     #[serde(rename = "Fizz")]
-    fizz: HammerfestPonies,
+    pub fizz: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Galio {
     #[serde(rename = "type")]
-    galio_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GalioData,
+    pub galio_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GalioData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GalioData {
     #[serde(rename = "Galio")]
-    galio: PuneHedgehog,
+    pub galio: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Gangplank {
     #[serde(rename = "type")]
-    gangplank_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GangplankData,
+    pub gangplank_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GangplankData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GangplankData {
     #[serde(rename = "Gangplank")]
-    gangplank: PuneHedgehog,
+    pub gangplank: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Garen {
     #[serde(rename = "type")]
-    garen_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GarenData,
+    pub garen_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GarenData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GarenData {
     #[serde(rename = "Garen")]
-    garen: PuneHedgehog,
+    pub garen: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Gnar {
     #[serde(rename = "type")]
-    gnar_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GnarData,
+    pub gnar_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GnarData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GnarData {
     #[serde(rename = "Gnar")]
-    gnar: PuneHedgehog,
+    pub gnar: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Gragas {
     #[serde(rename = "type")]
-    gragas_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GragasData,
+    pub gragas_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GragasData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GragasData {
     #[serde(rename = "Gragas")]
-    gragas: HammerfestPonies,
+    pub gragas: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Graves {
     #[serde(rename = "type")]
-    graves_type: GroupEnum,
-    format: String,
-    version: String,
-    data: GravesData,
+    pub graves_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: GravesData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct GravesData {
     #[serde(rename = "Graves")]
-    graves: HammerfestPonies,
+    pub graves: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Hecarim {
     #[serde(rename = "type")]
-    hecarim_type: GroupEnum,
-    format: String,
-    version: String,
-    data: HecarimData,
+    pub hecarim_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: HecarimData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct HecarimData {
     #[serde(rename = "Hecarim")]
-    hecarim: HammerfestPonies,
+    pub hecarim: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Heimerdinger {
     #[serde(rename = "type")]
-    heimerdinger_type: GroupEnum,
-    format: String,
-    version: String,
-    data: HeimerdingerData,
+    pub heimerdinger_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: HeimerdingerData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct HeimerdingerData {
     #[serde(rename = "Heimerdinger")]
-    heimerdinger: PuneHedgehog,
+    pub heimerdinger: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Illaoi {
     #[serde(rename = "type")]
-    illaoi_type: GroupEnum,
-    format: String,
-    version: String,
-    data: IllaoiData,
+    pub illaoi_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: IllaoiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct IllaoiData {
     #[serde(rename = "Illaoi")]
-    illaoi: PuneHedgehog,
+    pub illaoi: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Irelia {
     #[serde(rename = "type")]
-    irelia_type: GroupEnum,
-    format: String,
-    version: String,
-    data: IreliaData,
+    pub irelia_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: IreliaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct IreliaData {
     #[serde(rename = "Irelia")]
-    irelia: PuneHedgehog,
+    pub irelia: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ivern {
     #[serde(rename = "type")]
-    ivern_type: GroupEnum,
-    format: String,
-    version: String,
-    data: IvernData,
+    pub ivern_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: IvernData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct IvernData {
     #[serde(rename = "Ivern")]
-    ivern: PuneHedgehog,
+    pub ivern: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Janna {
     #[serde(rename = "type")]
-    janna_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JannaData,
+    pub janna_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JannaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JannaData {
     #[serde(rename = "Janna")]
-    janna: HammerfestPonies,
+    pub janna: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JarvanIv {
     #[serde(rename = "type")]
-    jarvan_iv_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JarvanIvData,
+    pub jarvan_iv_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JarvanIvData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JarvanIvData {
     #[serde(rename = "JarvanIV")]
-    jarvan_iv: HammerfestPonies,
+    pub jarvan_iv: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Jax {
     #[serde(rename = "type")]
-    jax_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JaxData,
+    pub jax_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JaxData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JaxData {
     #[serde(rename = "Jax")]
-    jax: HammerfestPonies,
+    pub jax: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Jayce {
     #[serde(rename = "type")]
-    jayce_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JayceData,
+    pub jayce_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JayceData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JayceData {
     #[serde(rename = "Jayce")]
-    jayce: PuneHedgehog,
+    pub jayce: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Jhin {
     #[serde(rename = "type")]
-    jhin_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JhinData,
+    pub jhin_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JhinData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JhinData {
     #[serde(rename = "Jhin")]
-    jhin: PuneHedgehog,
+    pub jhin: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Jinx {
     #[serde(rename = "type")]
-    jinx_type: GroupEnum,
-    format: String,
-    version: String,
-    data: JinxData,
+    pub jinx_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: JinxData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct JinxData {
     #[serde(rename = "Jinx")]
-    jinx: PuneHedgehog,
+    pub jinx: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kaisa {
     #[serde(rename = "type")]
-    kaisa_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KaisaData,
+    pub kaisa_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KaisaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KaisaData {
     #[serde(rename = "Kaisa")]
-    kaisa: PuneHedgehog,
+    pub kaisa: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kalista {
     #[serde(rename = "type")]
-    kalista_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KalistaData,
+    pub kalista_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KalistaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KalistaData {
     #[serde(rename = "Kalista")]
-    kalista: PuneHedgehog,
+    pub kalista: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Karma {
     #[serde(rename = "type")]
-    karma_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KarmaData,
+    pub karma_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KarmaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KarmaData {
     #[serde(rename = "Karma")]
-    karma: PuneHedgehog,
+    pub karma: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Karthus {
     #[serde(rename = "type")]
-    karthus_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KarthusData,
+    pub karthus_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KarthusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KarthusData {
     #[serde(rename = "Karthus")]
-    karthus: HammerfestPonies,
+    pub karthus: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kassadin {
     #[serde(rename = "type")]
-    kassadin_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KassadinData,
+    pub kassadin_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KassadinData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KassadinData {
     #[serde(rename = "Kassadin")]
-    kassadin: PurpleAnivia,
+    pub kassadin: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Katarina {
     #[serde(rename = "type")]
-    katarina_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KatarinaData,
+    pub katarina_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KatarinaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KatarinaData {
     #[serde(rename = "Katarina")]
-    katarina: PuneHedgehog,
+    pub katarina: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kayle {
     #[serde(rename = "type")]
-    kayle_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KayleData,
+    pub kayle_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KayleData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KayleData {
     #[serde(rename = "Kayle")]
-    kayle: PuneHedgehog,
+    pub kayle: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kayn {
     #[serde(rename = "type")]
-    kayn_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KaynData,
+    pub kayn_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KaynData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KaynData {
     #[serde(rename = "Kayn")]
-    kayn: PuneHedgehog,
+    pub kayn: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kennen {
     #[serde(rename = "type")]
-    kennen_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KennenData,
+    pub kennen_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KennenData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KennenData {
     #[serde(rename = "Kennen")]
-    kennen: PuneHedgehog,
+    pub kennen: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Khazix {
     #[serde(rename = "type")]
-    khazix_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KhazixData,
+    pub khazix_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KhazixData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KhazixData {
     #[serde(rename = "Khazix")]
-    khazix: PuneHedgehog,
+    pub khazix: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kindred {
     #[serde(rename = "type")]
-    kindred_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KindredData,
+    pub kindred_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KindredData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KindredData {
     #[serde(rename = "Kindred")]
-    kindred: PuneHedgehog,
+    pub kindred: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Kled {
     #[serde(rename = "type")]
-    kled_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KledData,
+    pub kled_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KledData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KledData {
     #[serde(rename = "Kled")]
-    kled: PuneHedgehog,
+    pub kled: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KogMaw {
     #[serde(rename = "type")]
-    kog_maw_type: GroupEnum,
-    format: String,
-    version: String,
-    data: KogMawData,
+    pub kog_maw_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: KogMawData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct KogMawData {
     #[serde(rename = "KogMaw")]
-    kog_maw: PuneHedgehog,
+    pub kog_maw: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Leblanc {
     #[serde(rename = "type")]
-    leblanc_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LeblancData,
+    pub leblanc_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LeblancData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LeblancData {
     #[serde(rename = "Leblanc")]
-    leblanc: PuneHedgehog,
+    pub leblanc: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LeeSin {
     #[serde(rename = "type")]
-    lee_sin_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LeeSinData,
+    pub lee_sin_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LeeSinData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LeeSinData {
     #[serde(rename = "LeeSin")]
-    lee_sin: PuneHedgehog,
+    pub lee_sin: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Leona {
     #[serde(rename = "type")]
-    leona_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LeonaData,
+    pub leona_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LeonaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LeonaData {
     #[serde(rename = "Leona")]
-    leona: PuneHedgehog,
+    pub leona: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Lissandra {
     #[serde(rename = "type")]
-    lissandra_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LissandraData,
+    pub lissandra_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LissandraData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LissandraData {
     #[serde(rename = "Lissandra")]
-    lissandra: PuneHedgehog,
+    pub lissandra: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Lucian {
     #[serde(rename = "type")]
-    lucian_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LucianData,
+    pub lucian_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LucianData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LucianData {
     #[serde(rename = "Lucian")]
-    lucian: PuneHedgehog,
+    pub lucian: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Lulu {
     #[serde(rename = "type")]
-    lulu_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LuluData,
+    pub lulu_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LuluData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LuluData {
     #[serde(rename = "Lulu")]
-    lulu: HammerfestPonies,
+    pub lulu: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Lux {
     #[serde(rename = "type")]
-    lux_type: GroupEnum,
-    format: String,
-    version: String,
-    data: LuxData,
+    pub lux_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: LuxData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct LuxData {
     #[serde(rename = "Lux")]
-    lux: HammerfestPonies,
+    pub lux: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Malphite {
     #[serde(rename = "type")]
-    malphite_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MalphiteData,
+    pub malphite_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MalphiteData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MalphiteData {
     #[serde(rename = "Malphite")]
-    malphite: PuneHedgehog,
+    pub malphite: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Malzahar {
     #[serde(rename = "type")]
-    malzahar_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MalzaharData,
+    pub malzahar_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MalzaharData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MalzaharData {
     #[serde(rename = "Malzahar")]
-    malzahar: PuneHedgehog,
+    pub malzahar: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Maokai {
     #[serde(rename = "type")]
-    maokai_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MaokaiData,
+    pub maokai_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MaokaiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MaokaiData {
     #[serde(rename = "Maokai")]
-    maokai: PurpleAnivia,
+    pub maokai: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MasterYi {
     #[serde(rename = "type")]
-    master_yi_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MasterYiData,
+    pub master_yi_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MasterYiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MasterYiData {
     #[serde(rename = "MasterYi")]
-    master_yi: PuneHedgehog,
+    pub master_yi: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MissFortune {
     #[serde(rename = "type")]
-    miss_fortune_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MissFortuneData,
+    pub miss_fortune_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MissFortuneData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MissFortuneData {
     #[serde(rename = "MissFortune")]
-    miss_fortune: PuneHedgehog,
+    pub miss_fortune: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MonkeyKing {
     #[serde(rename = "type")]
-    monkey_king_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MonkeyKingData,
+    pub monkey_king_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MonkeyKingData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MonkeyKingData {
     #[serde(rename = "MonkeyKing")]
-    monkey_king: PuneHedgehog,
+    pub monkey_king: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Mordekaiser {
     #[serde(rename = "type")]
-    mordekaiser_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MordekaiserData,
+    pub mordekaiser_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MordekaiserData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MordekaiserData {
     #[serde(rename = "Mordekaiser")]
-    mordekaiser: PuneHedgehog,
+    pub mordekaiser: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Morgana {
     #[serde(rename = "type")]
-    morgana_type: GroupEnum,
-    format: String,
-    version: String,
-    data: MorganaData,
+    pub morgana_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: MorganaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct MorganaData {
     #[serde(rename = "Morgana")]
-    morgana: PuneHedgehog,
+    pub morgana: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nami {
     #[serde(rename = "type")]
-    nami_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NamiData,
+    pub nami_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NamiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NamiData {
     #[serde(rename = "Nami")]
-    nami: HammerfestPonies,
+    pub nami: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nasus {
     #[serde(rename = "type")]
-    nasus_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NasusData,
+    pub nasus_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NasusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NasusData {
     #[serde(rename = "Nasus")]
-    nasus: PuneHedgehog,
+    pub nasus: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nautilus {
     #[serde(rename = "type")]
-    nautilus_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NautilusData,
+    pub nautilus_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NautilusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NautilusData {
     #[serde(rename = "Nautilus")]
-    nautilus: PuneHedgehog,
+    pub nautilus: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Neeko {
     #[serde(rename = "type")]
-    neeko_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NeekoData,
+    pub neeko_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NeekoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NeekoData {
     #[serde(rename = "Neeko")]
-    neeko: PuneHedgehog,
+    pub neeko: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nidalee {
     #[serde(rename = "type")]
-    nidalee_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NidaleeData,
+    pub nidalee_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NidaleeData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NidaleeData {
     #[serde(rename = "Nidalee")]
-    nidalee: PuneHedgehog,
+    pub nidalee: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nocturne {
     #[serde(rename = "type")]
-    nocturne_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NocturneData,
+    pub nocturne_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NocturneData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NocturneData {
     #[serde(rename = "Nocturne")]
-    nocturne: PuneHedgehog,
+    pub nocturne: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Nunu {
     #[serde(rename = "type")]
-    nunu_type: GroupEnum,
-    format: String,
-    version: String,
-    data: NunuData,
+    pub nunu_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: NunuData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct NunuData {
     #[serde(rename = "Nunu")]
-    nunu: HammerfestPonies,
+    pub nunu: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Olaf {
     #[serde(rename = "type")]
-    olaf_type: GroupEnum,
-    format: String,
-    version: String,
-    data: OlafData,
+    pub olaf_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: OlafData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct OlafData {
     #[serde(rename = "Olaf")]
-    olaf: PuneHedgehog,
+    pub olaf: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Orianna {
     #[serde(rename = "type")]
-    orianna_type: GroupEnum,
-    format: String,
-    version: String,
-    data: OriannaData,
+    pub orianna_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: OriannaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct OriannaData {
     #[serde(rename = "Orianna")]
-    orianna: PurpleAnivia,
+    pub orianna: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ornn {
     #[serde(rename = "type")]
-    ornn_type: GroupEnum,
-    format: String,
-    version: String,
-    data: OrnnData,
+    pub ornn_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: OrnnData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct OrnnData {
     #[serde(rename = "Ornn")]
-    ornn: PuneHedgehog,
+    pub ornn: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Pantheon {
     #[serde(rename = "type")]
-    pantheon_type: GroupEnum,
-    format: String,
-    version: String,
-    data: PantheonData,
+    pub pantheon_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: PantheonData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PantheonData {
     #[serde(rename = "Pantheon")]
-    pantheon: HammerfestPonies,
+    pub pantheon: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Poppy {
     #[serde(rename = "type")]
-    poppy_type: GroupEnum,
-    format: String,
-    version: String,
-    data: PoppyData,
+    pub poppy_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: PoppyData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PoppyData {
     #[serde(rename = "Poppy")]
-    poppy: PuneHedgehog,
+    pub poppy: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Pyke {
     #[serde(rename = "type")]
-    pyke_type: GroupEnum,
-    format: String,
-    version: String,
-    data: PykeData,
+    pub pyke_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: PykeData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PykeData {
     #[serde(rename = "Pyke")]
-    pyke: PuneHedgehog,
+    pub pyke: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Qiyana {
     #[serde(rename = "type")]
-    qiyana_type: GroupEnum,
-    format: String,
-    version: String,
-    data: QiyanaData,
+    pub qiyana_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: QiyanaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct QiyanaData {
     #[serde(rename = "Qiyana")]
-    qiyana: QiyanaClass,
+    pub qiyana: QiyanaClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct QiyanaClass {
-    id: FluffyId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<Option<serde_json::Value>>,
-    enemytips: Vec<Option<serde_json::Value>>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<QiyanaRecommended>,
+    pub id: FluffyId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<Option<serde_json::Value>>,
+    pub enemytips: Vec<Option<serde_json::Value>>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<QiyanaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct QiyanaRecommended {
-    champion: FluffyId,
-    title: String,
-    map: String,
-    mode: Mode,
+    pub champion: FluffyId,
+    pub title: String,
+    pub map: String,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: i64,
+    pub custom_tag: String,
+    pub sortrank: i64,
     #[serde(rename = "extensionPage")]
-    extension_page: bool,
+    pub extension_page: bool,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Quinn {
     #[serde(rename = "type")]
-    quinn_type: GroupEnum,
-    format: String,
-    version: String,
-    data: QuinnData,
+    pub quinn_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: QuinnData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct QuinnData {
     #[serde(rename = "Quinn")]
-    quinn: PuneHedgehog,
+    pub quinn: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rakan {
     #[serde(rename = "type")]
-    rakan_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RakanData,
+    pub rakan_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RakanData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RakanData {
     #[serde(rename = "Rakan")]
-    rakan: PuneHedgehog,
+    pub rakan: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rammus {
     #[serde(rename = "type")]
-    rammus_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RammusData,
+    pub rammus_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RammusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RammusData {
     #[serde(rename = "Rammus")]
-    rammus: PuneHedgehog,
+    pub rammus: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RekSai {
     #[serde(rename = "type")]
-    rek_sai_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RekSaiData,
+    pub rek_sai_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RekSaiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RekSaiData {
     #[serde(rename = "RekSai")]
-    rek_sai: PuneHedgehog,
+    pub rek_sai: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Renekton {
     #[serde(rename = "type")]
-    renekton_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RenektonData,
+    pub renekton_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RenektonData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RenektonData {
     #[serde(rename = "Renekton")]
-    renekton: PuneHedgehog,
+    pub renekton: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rengar {
     #[serde(rename = "type")]
-    rengar_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RengarData,
+    pub rengar_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RengarData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RengarData {
     #[serde(rename = "Rengar")]
-    rengar: PuneHedgehog,
+    pub rengar: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Riven {
     #[serde(rename = "type")]
-    riven_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RivenData,
+    pub riven_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RivenData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RivenData {
     #[serde(rename = "Riven")]
-    riven: PuneHedgehog,
+    pub riven: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rumble {
     #[serde(rename = "type")]
-    rumble_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RumbleData,
+    pub rumble_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RumbleData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RumbleData {
     #[serde(rename = "Rumble")]
-    rumble: PuneHedgehog,
+    pub rumble: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ryze {
     #[serde(rename = "type")]
-    ryze_type: GroupEnum,
-    format: String,
-    version: String,
-    data: RyzeData,
+    pub ryze_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: RyzeData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct RyzeData {
     #[serde(rename = "Ryze")]
-    ryze: PuneHedgehog,
+    pub ryze: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Sejuani {
     #[serde(rename = "type")]
-    sejuani_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SejuaniData,
+    pub sejuani_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SejuaniData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SejuaniData {
     #[serde(rename = "Sejuani")]
-    sejuani: PuneHedgehog,
+    pub sejuani: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Senna {
     #[serde(rename = "type")]
-    senna_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SennaData,
+    pub senna_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SennaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SennaData {
     #[serde(rename = "Senna")]
-    senna: QiyanaClass,
+    pub senna: QiyanaClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Shaco {
     #[serde(rename = "type")]
-    shaco_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ShacoData,
+    pub shaco_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ShacoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ShacoData {
     #[serde(rename = "Shaco")]
-    shaco: PuneHedgehog,
+    pub shaco: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Shen {
     #[serde(rename = "type")]
-    shen_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ShenData,
+    pub shen_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ShenData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ShenData {
     #[serde(rename = "Shen")]
-    shen: HammerfestPonies,
+    pub shen: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Shyvana {
     #[serde(rename = "type")]
-    shyvana_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ShyvanaData,
+    pub shyvana_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ShyvanaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ShyvanaData {
     #[serde(rename = "Shyvana")]
-    shyvana: PuneHedgehog,
+    pub shyvana: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Singed {
     #[serde(rename = "type")]
-    singed_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SingedData,
+    pub singed_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SingedData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SingedData {
     #[serde(rename = "Singed")]
-    singed: PuneHedgehog,
+    pub singed: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Sion {
     #[serde(rename = "type")]
-    sion_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SionData,
+    pub sion_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SionData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SionData {
     #[serde(rename = "Sion")]
-    sion: PuneHedgehog,
+    pub sion: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Sivir {
     #[serde(rename = "type")]
-    sivir_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SivirData,
+    pub sivir_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SivirData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SivirData {
     #[serde(rename = "Sivir")]
-    sivir: PuneHedgehog,
+    pub sivir: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Skarner {
     #[serde(rename = "type")]
-    skarner_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SkarnerData,
+    pub skarner_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SkarnerData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SkarnerData {
     #[serde(rename = "Skarner")]
-    skarner: PuneHedgehog,
+    pub skarner: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Sona {
     #[serde(rename = "type")]
-    sona_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SonaData,
+    pub sona_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SonaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SonaData {
     #[serde(rename = "Sona")]
-    sona: HammerfestPonies,
+    pub sona: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Soraka {
     #[serde(rename = "type")]
-    soraka_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SorakaData,
+    pub soraka_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SorakaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SorakaData {
     #[serde(rename = "Soraka")]
-    soraka: PuneHedgehog,
+    pub soraka: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Swain {
     #[serde(rename = "type")]
-    swain_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SwainData,
+    pub swain_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SwainData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SwainData {
     #[serde(rename = "Swain")]
-    swain: BrandClass,
+    pub swain: BrandClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Sylas {
     #[serde(rename = "type")]
-    sylas_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SylasData,
+    pub sylas_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SylasData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SylasData {
     #[serde(rename = "Sylas")]
-    sylas: HammerfestPonies,
+    pub sylas: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Syndra {
     #[serde(rename = "type")]
-    syndra_type: GroupEnum,
-    format: String,
-    version: String,
-    data: SyndraData,
+    pub syndra_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: SyndraData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct SyndraData {
     #[serde(rename = "Syndra")]
-    syndra: HammerfestPonies,
+    pub syndra: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TahmKench {
     #[serde(rename = "type")]
-    tahm_kench_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TahmKenchData,
+    pub tahm_kench_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TahmKenchData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TahmKenchData {
     #[serde(rename = "TahmKench")]
-    tahm_kench: HammerfestPonies,
+    pub tahm_kench: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Taliyah {
     #[serde(rename = "type")]
-    taliyah_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TaliyahData,
+    pub taliyah_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TaliyahData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TaliyahData {
     #[serde(rename = "Taliyah")]
-    taliyah: PuneHedgehog,
+    pub taliyah: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Talon {
     #[serde(rename = "type")]
-    talon_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TalonData,
+    pub talon_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TalonData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TalonData {
     #[serde(rename = "Talon")]
-    talon: PuneHedgehog,
+    pub talon: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Taric {
     #[serde(rename = "type")]
-    taric_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TaricData,
+    pub taric_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TaricData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TaricData {
     #[serde(rename = "Taric")]
-    taric: PuneHedgehog,
+    pub taric: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Teemo {
     #[serde(rename = "type")]
-    teemo_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TeemoData,
+    pub teemo_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TeemoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TeemoData {
     #[serde(rename = "Teemo")]
-    teemo: PuneHedgehog,
+    pub teemo: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Thresh {
     #[serde(rename = "type")]
-    thresh_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ThreshData,
+    pub thresh_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ThreshData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ThreshData {
     #[serde(rename = "Thresh")]
-    thresh: PuneHedgehog,
+    pub thresh: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Tristana {
     #[serde(rename = "type")]
-    tristana_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TristanaData,
+    pub tristana_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TristanaData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TristanaData {
     #[serde(rename = "Tristana")]
-    tristana: PuneHedgehog,
+    pub tristana: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Trundle {
     #[serde(rename = "type")]
-    trundle_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TrundleData,
+    pub trundle_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TrundleData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TrundleData {
     #[serde(rename = "Trundle")]
-    trundle: PuneHedgehog,
+    pub trundle: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Tryndamere {
     #[serde(rename = "type")]
-    tryndamere_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TryndamereData,
+    pub tryndamere_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TryndamereData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TryndamereData {
     #[serde(rename = "Tryndamere")]
-    tryndamere: HammerfestPonies,
+    pub tryndamere: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TwistedFate {
     #[serde(rename = "type")]
-    twisted_fate_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TwistedFateData,
+    pub twisted_fate_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TwistedFateData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TwistedFateData {
     #[serde(rename = "TwistedFate")]
-    twisted_fate: BrandClass,
+    pub twisted_fate: BrandClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Twitch {
     #[serde(rename = "type")]
-    twitch_type: GroupEnum,
-    format: String,
-    version: String,
-    data: TwitchData,
+    pub twitch_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: TwitchData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct TwitchData {
     #[serde(rename = "Twitch")]
-    twitch: PuneHedgehog,
+    pub twitch: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Udyr {
     #[serde(rename = "type")]
-    udyr_type: GroupEnum,
-    format: String,
-    version: String,
-    data: UdyrData,
+    pub udyr_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: UdyrData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct UdyrData {
     #[serde(rename = "Udyr")]
-    udyr: PuneHedgehog,
+    pub udyr: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Urgot {
     #[serde(rename = "type")]
-    urgot_type: GroupEnum,
-    format: String,
-    version: String,
-    data: UrgotData,
+    pub urgot_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: UrgotData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct UrgotData {
     #[serde(rename = "Urgot")]
-    urgot: PuneHedgehog,
+    pub urgot: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Varus {
     #[serde(rename = "type")]
-    varus_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VarusData,
+    pub varus_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VarusData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VarusData {
     #[serde(rename = "Varus")]
-    varus: HammerfestPonies,
+    pub varus: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Vayne {
     #[serde(rename = "type")]
-    vayne_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VayneData,
+    pub vayne_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VayneData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VayneData {
     #[serde(rename = "Vayne")]
-    vayne: HammerfestPonies,
+    pub vayne: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Veigar {
     #[serde(rename = "type")]
-    veigar_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VeigarData,
+    pub veigar_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VeigarData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VeigarData {
     #[serde(rename = "Veigar")]
-    veigar: PuneHedgehog,
+    pub veigar: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Velkoz {
     #[serde(rename = "type")]
-    velkoz_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VelkozData,
+    pub velkoz_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VelkozData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VelkozData {
     #[serde(rename = "Velkoz")]
-    velkoz: PuneHedgehog,
+    pub velkoz: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Vi {
     #[serde(rename = "type")]
-    vi_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ViData,
+    pub vi_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ViData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ViData {
     #[serde(rename = "Vi")]
-    vi: HammerfestPonies,
+    pub vi: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Viktor {
     #[serde(rename = "type")]
-    viktor_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ViktorData,
+    pub viktor_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ViktorData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ViktorData {
     #[serde(rename = "Viktor")]
-    viktor: HammerfestPonies,
+    pub viktor: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Vladimir {
     #[serde(rename = "type")]
-    vladimir_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VladimirData,
+    pub vladimir_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VladimirData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VladimirData {
     #[serde(rename = "Vladimir")]
-    vladimir: PuneHedgehog,
+    pub vladimir: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Volibear {
     #[serde(rename = "type")]
-    volibear_type: GroupEnum,
-    format: String,
-    version: String,
-    data: VolibearData,
+    pub volibear_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: VolibearData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct VolibearData {
     #[serde(rename = "Volibear")]
-    volibear: PuneHedgehog,
+    pub volibear: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Warwick {
     #[serde(rename = "type")]
-    warwick_type: GroupEnum,
-    format: String,
-    version: String,
-    data: WarwickData,
+    pub warwick_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: WarwickData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct WarwickData {
     #[serde(rename = "Warwick")]
-    warwick: PuneHedgehog,
+    pub warwick: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Xayah {
     #[serde(rename = "type")]
-    xayah_type: GroupEnum,
-    format: String,
-    version: String,
-    data: XayahData,
+    pub xayah_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: XayahData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct XayahData {
     #[serde(rename = "Xayah")]
-    xayah: PuneHedgehog,
+    pub xayah: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Xerath {
     #[serde(rename = "type")]
-    xerath_type: GroupEnum,
-    format: String,
-    version: String,
-    data: XerathData,
+    pub xerath_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: XerathData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct XerathData {
     #[serde(rename = "Xerath")]
-    xerath: PurpleAnivia,
+    pub xerath: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct XinZhao {
     #[serde(rename = "type")]
-    xin_zhao_type: GroupEnum,
-    format: String,
-    version: String,
-    data: XinZhaoData,
+    pub xin_zhao_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: XinZhaoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct XinZhaoData {
     #[serde(rename = "XinZhao")]
-    xin_zhao: PuneHedgehog,
+    pub xin_zhao: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Yasuo {
     #[serde(rename = "type")]
-    yasuo_type: GroupEnum,
-    format: String,
-    version: String,
-    data: YasuoData,
+    pub yasuo_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: YasuoData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct YasuoData {
     #[serde(rename = "Yasuo")]
-    yasuo: PuneHedgehog,
+    pub yasuo: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Yorick {
     #[serde(rename = "type")]
-    yorick_type: GroupEnum,
-    format: String,
-    version: String,
-    data: YorickData,
+    pub yorick_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: YorickData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct YorickData {
     #[serde(rename = "Yorick")]
-    yorick: PuneHedgehog,
+    pub yorick: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Yuumi {
     #[serde(rename = "type")]
-    yuumi_type: GroupEnum,
-    format: String,
-    version: String,
-    data: YuumiData,
+    pub yuumi_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: YuumiData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct YuumiData {
     #[serde(rename = "Yuumi")]
-    yuumi: QiyanaClass,
+    pub yuumi: QiyanaClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zac {
     #[serde(rename = "type")]
-    zac_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZacData,
+    pub zac_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZacData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZacData {
     #[serde(rename = "Zac")]
-    zac: PuneHedgehog,
+    pub zac: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zed {
     #[serde(rename = "type")]
-    zed_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZedData,
+    pub zed_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZedData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZedData {
     #[serde(rename = "Zed")]
-    zed: PuneHedgehog,
+    pub zed: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Ziggs {
     #[serde(rename = "type")]
-    ziggs_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZiggsData,
+    pub ziggs_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZiggsData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZiggsData {
     #[serde(rename = "Ziggs")]
-    ziggs: PuneHedgehog,
+    pub ziggs: PuneHedgehog,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zilean {
     #[serde(rename = "type")]
-    zilean_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZileanData,
+    pub zilean_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZileanData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZileanData {
     #[serde(rename = "Zilean")]
-    zilean: PurpleAnivia,
+    pub zilean: PurpleAnivia,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zoe {
     #[serde(rename = "type")]
-    zoe_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZoeData,
+    pub zoe_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZoeData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZoeData {
     #[serde(rename = "Zoe")]
-    zoe: ZoeClass,
+    pub zoe: ZoeClass,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZoeClass {
-    id: FluffyId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<QiyanaRecommended>,
+    pub id: FluffyId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<QiyanaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zyra {
     #[serde(rename = "type")]
-    zyra_type: GroupEnum,
-    format: String,
-    version: String,
-    data: ZyraData,
+    pub zyra_type: GroupEnum,
+    pub format: String,
+    pub version: String,
+    pub data: ZyraData,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct ZyraData {
     #[serde(rename = "Zyra")]
-    zyra: HammerfestPonies,
+    pub zyra: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]

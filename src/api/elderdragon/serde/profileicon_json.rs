@@ -31,26 +31,26 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct ProfileiconJson {
     #[serde(rename = "type")]
-    profileicon_json_type: Type,
-    version: Version,
-    data: HashMap<String, Datum>,
+    pub profileicon_json_type: Type,
+    pub version: Version,
+    pub data: HashMap<String, Datum>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
-    id: i64,
-    image: Image,
+    pub id: i64,
+    pub image: Image,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: String,
-    sprite: Sprite,
-    group: Type,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: Type,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
