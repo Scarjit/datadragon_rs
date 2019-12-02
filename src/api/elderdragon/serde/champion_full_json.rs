@@ -31,449 +31,449 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct ChampionFullJson {
     #[serde(rename = "type")]
-    champion_full_json_type: GroupEnum,
-    format: Format,
-    version: Version,
-    data: Data,
-    keys: HashMap<String, String>,
+    pub champion_full_json_type: GroupEnum,
+    pub format: Format,
+    pub version: Version,
+    pub data: Data,
+    pub keys: HashMap<String, String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Data {
     #[serde(rename = "Aatrox")]
-    aatrox: PuneHedgehog,
+    pub aatrox: PuneHedgehog,
     #[serde(rename = "Ahri")]
-    ahri: HammerfestPonies,
+    pub ahri: HammerfestPonies,
     #[serde(rename = "Akali")]
-    akali: Akali,
+    pub akali: Akali,
     #[serde(rename = "Alistar")]
-    alistar: HammerfestPonies,
+    pub alistar: HammerfestPonies,
     #[serde(rename = "Amumu")]
-    amumu: HammerfestPonies,
+    pub amumu: HammerfestPonies,
     #[serde(rename = "Anivia")]
-    anivia: Anivia,
+    pub anivia: Anivia,
     #[serde(rename = "Annie")]
-    annie: Anivia,
+    pub annie: Anivia,
     #[serde(rename = "Ashe")]
-    ashe: HammerfestPonies,
+    pub ashe: HammerfestPonies,
     #[serde(rename = "AurelionSol")]
-    aurelion_sol: Anivia,
+    pub aurelion_sol: Anivia,
     #[serde(rename = "Azir")]
-    azir: PuneHedgehog,
+    pub azir: PuneHedgehog,
     #[serde(rename = "Bard")]
-    bard: PuneHedgehog,
+    pub bard: PuneHedgehog,
     #[serde(rename = "Blitzcrank")]
-    blitzcrank: PuneHedgehog,
+    pub blitzcrank: PuneHedgehog,
     #[serde(rename = "Brand")]
-    brand: Brand,
+    pub brand: Brand,
     #[serde(rename = "Braum")]
-    braum: PuneHedgehog,
+    pub braum: PuneHedgehog,
     #[serde(rename = "Caitlyn")]
-    caitlyn: HammerfestPonies,
+    pub caitlyn: HammerfestPonies,
     #[serde(rename = "Camille")]
-    camille: PuneHedgehog,
+    pub camille: PuneHedgehog,
     #[serde(rename = "Cassiopeia")]
-    cassiopeia: Anivia,
+    pub cassiopeia: Anivia,
     #[serde(rename = "Chogath")]
-    chogath: HammerfestPonies,
+    pub chogath: HammerfestPonies,
     #[serde(rename = "Corki")]
-    corki: PuneHedgehog,
+    pub corki: PuneHedgehog,
     #[serde(rename = "Darius")]
-    darius: PuneHedgehog,
+    pub darius: PuneHedgehog,
     #[serde(rename = "Diana")]
-    diana: HammerfestPonies,
+    pub diana: HammerfestPonies,
     #[serde(rename = "Draven")]
-    draven: HammerfestPonies,
+    pub draven: HammerfestPonies,
     #[serde(rename = "DrMundo")]
-    dr_mundo: PuneHedgehog,
+    pub dr_mundo: PuneHedgehog,
     #[serde(rename = "Ekko")]
-    ekko: PuneHedgehog,
+    pub ekko: PuneHedgehog,
     #[serde(rename = "Elise")]
-    elise: PuneHedgehog,
+    pub elise: PuneHedgehog,
     #[serde(rename = "Evelynn")]
-    evelynn: PuneHedgehog,
+    pub evelynn: PuneHedgehog,
     #[serde(rename = "Ezreal")]
-    ezreal: PuneHedgehog,
+    pub ezreal: PuneHedgehog,
     #[serde(rename = "Fiddlesticks")]
-    fiddlesticks: PuneHedgehog,
+    pub fiddlesticks: PuneHedgehog,
     #[serde(rename = "Fiora")]
-    fiora: PuneHedgehog,
+    pub fiora: PuneHedgehog,
     #[serde(rename = "Fizz")]
-    fizz: HammerfestPonies,
+    pub fizz: HammerfestPonies,
     #[serde(rename = "Galio")]
-    galio: PuneHedgehog,
+    pub galio: PuneHedgehog,
     #[serde(rename = "Gangplank")]
-    gangplank: PuneHedgehog,
+    pub gangplank: PuneHedgehog,
     #[serde(rename = "Garen")]
-    garen: PuneHedgehog,
+    pub garen: PuneHedgehog,
     #[serde(rename = "Gnar")]
-    gnar: PuneHedgehog,
+    pub gnar: PuneHedgehog,
     #[serde(rename = "Gragas")]
-    gragas: HammerfestPonies,
+    pub gragas: HammerfestPonies,
     #[serde(rename = "Graves")]
-    graves: HammerfestPonies,
+    pub graves: HammerfestPonies,
     #[serde(rename = "Hecarim")]
-    hecarim: HammerfestPonies,
+    pub hecarim: HammerfestPonies,
     #[serde(rename = "Heimerdinger")]
-    heimerdinger: PuneHedgehog,
+    pub heimerdinger: PuneHedgehog,
     #[serde(rename = "Illaoi")]
-    illaoi: PuneHedgehog,
+    pub illaoi: PuneHedgehog,
     #[serde(rename = "Irelia")]
-    irelia: PuneHedgehog,
+    pub irelia: PuneHedgehog,
     #[serde(rename = "Ivern")]
-    ivern: PuneHedgehog,
+    pub ivern: PuneHedgehog,
     #[serde(rename = "Janna")]
-    janna: HammerfestPonies,
+    pub janna: HammerfestPonies,
     #[serde(rename = "JarvanIV")]
-    jarvan_iv: HammerfestPonies,
+    pub jarvan_iv: HammerfestPonies,
     #[serde(rename = "Jax")]
-    jax: HammerfestPonies,
+    pub jax: HammerfestPonies,
     #[serde(rename = "Jayce")]
-    jayce: PuneHedgehog,
+    pub jayce: PuneHedgehog,
     #[serde(rename = "Jhin")]
-    jhin: PuneHedgehog,
+    pub jhin: PuneHedgehog,
     #[serde(rename = "Jinx")]
-    jinx: PuneHedgehog,
+    pub jinx: PuneHedgehog,
     #[serde(rename = "Kaisa")]
-    kaisa: PuneHedgehog,
+    pub kaisa: PuneHedgehog,
     #[serde(rename = "Kalista")]
-    kalista: PuneHedgehog,
+    pub kalista: PuneHedgehog,
     #[serde(rename = "Karma")]
-    karma: PuneHedgehog,
+    pub karma: PuneHedgehog,
     #[serde(rename = "Karthus")]
-    karthus: HammerfestPonies,
+    pub karthus: HammerfestPonies,
     #[serde(rename = "Kassadin")]
-    kassadin: Anivia,
+    pub kassadin: Anivia,
     #[serde(rename = "Katarina")]
-    katarina: PuneHedgehog,
+    pub katarina: PuneHedgehog,
     #[serde(rename = "Kayle")]
-    kayle: PuneHedgehog,
+    pub kayle: PuneHedgehog,
     #[serde(rename = "Kayn")]
-    kayn: PuneHedgehog,
+    pub kayn: PuneHedgehog,
     #[serde(rename = "Kennen")]
-    kennen: PuneHedgehog,
+    pub kennen: PuneHedgehog,
     #[serde(rename = "Khazix")]
-    khazix: PuneHedgehog,
+    pub khazix: PuneHedgehog,
     #[serde(rename = "Kindred")]
-    kindred: PuneHedgehog,
+    pub kindred: PuneHedgehog,
     #[serde(rename = "Kled")]
-    kled: PuneHedgehog,
+    pub kled: PuneHedgehog,
     #[serde(rename = "KogMaw")]
-    kog_maw: PuneHedgehog,
+    pub kog_maw: PuneHedgehog,
     #[serde(rename = "Leblanc")]
-    leblanc: PuneHedgehog,
+    pub leblanc: PuneHedgehog,
     #[serde(rename = "LeeSin")]
-    lee_sin: PuneHedgehog,
+    pub lee_sin: PuneHedgehog,
     #[serde(rename = "Leona")]
-    leona: PuneHedgehog,
+    pub leona: PuneHedgehog,
     #[serde(rename = "Lissandra")]
-    lissandra: PuneHedgehog,
+    pub lissandra: PuneHedgehog,
     #[serde(rename = "Lucian")]
-    lucian: PuneHedgehog,
+    pub lucian: PuneHedgehog,
     #[serde(rename = "Lulu")]
-    lulu: HammerfestPonies,
+    pub lulu: HammerfestPonies,
     #[serde(rename = "Lux")]
-    lux: HammerfestPonies,
+    pub lux: HammerfestPonies,
     #[serde(rename = "Malphite")]
-    malphite: PuneHedgehog,
+    pub malphite: PuneHedgehog,
     #[serde(rename = "Malzahar")]
-    malzahar: PuneHedgehog,
+    pub malzahar: PuneHedgehog,
     #[serde(rename = "Maokai")]
-    maokai: Anivia,
+    pub maokai: Anivia,
     #[serde(rename = "MasterYi")]
-    master_yi: PuneHedgehog,
+    pub master_yi: PuneHedgehog,
     #[serde(rename = "MissFortune")]
-    miss_fortune: PuneHedgehog,
+    pub miss_fortune: PuneHedgehog,
     #[serde(rename = "MonkeyKing")]
-    monkey_king: PuneHedgehog,
+    pub monkey_king: PuneHedgehog,
     #[serde(rename = "Mordekaiser")]
-    mordekaiser: PuneHedgehog,
+    pub mordekaiser: PuneHedgehog,
     #[serde(rename = "Morgana")]
-    morgana: PuneHedgehog,
+    pub morgana: PuneHedgehog,
     #[serde(rename = "Nami")]
-    nami: HammerfestPonies,
+    pub nami: HammerfestPonies,
     #[serde(rename = "Nasus")]
-    nasus: PuneHedgehog,
+    pub nasus: PuneHedgehog,
     #[serde(rename = "Nautilus")]
-    nautilus: PuneHedgehog,
+    pub nautilus: PuneHedgehog,
     #[serde(rename = "Neeko")]
-    neeko: PuneHedgehog,
+    pub neeko: PuneHedgehog,
     #[serde(rename = "Nidalee")]
-    nidalee: PuneHedgehog,
+    pub nidalee: PuneHedgehog,
     #[serde(rename = "Nocturne")]
-    nocturne: PuneHedgehog,
+    pub nocturne: PuneHedgehog,
     #[serde(rename = "Nunu")]
-    nunu: HammerfestPonies,
+    pub nunu: HammerfestPonies,
     #[serde(rename = "Olaf")]
-    olaf: PuneHedgehog,
+    pub olaf: PuneHedgehog,
     #[serde(rename = "Orianna")]
-    orianna: Anivia,
+    pub orianna: Anivia,
     #[serde(rename = "Ornn")]
-    ornn: PuneHedgehog,
+    pub ornn: PuneHedgehog,
     #[serde(rename = "Pantheon")]
-    pantheon: HammerfestPonies,
+    pub pantheon: HammerfestPonies,
     #[serde(rename = "Poppy")]
-    poppy: PuneHedgehog,
+    pub poppy: PuneHedgehog,
     #[serde(rename = "Pyke")]
-    pyke: PuneHedgehog,
+    pub pyke: PuneHedgehog,
     #[serde(rename = "Qiyana")]
-    qiyana: Qiyana,
+    pub qiyana: Qiyana,
     #[serde(rename = "Quinn")]
-    quinn: PuneHedgehog,
+    pub quinn: PuneHedgehog,
     #[serde(rename = "Rakan")]
-    rakan: PuneHedgehog,
+    pub rakan: PuneHedgehog,
     #[serde(rename = "Rammus")]
-    rammus: PuneHedgehog,
+    pub rammus: PuneHedgehog,
     #[serde(rename = "RekSai")]
-    rek_sai: PuneHedgehog,
+    pub rek_sai: PuneHedgehog,
     #[serde(rename = "Renekton")]
-    renekton: PuneHedgehog,
+    pub renekton: PuneHedgehog,
     #[serde(rename = "Rengar")]
-    rengar: PuneHedgehog,
+    pub rengar: PuneHedgehog,
     #[serde(rename = "Riven")]
-    riven: PuneHedgehog,
+    pub riven: PuneHedgehog,
     #[serde(rename = "Rumble")]
-    rumble: PuneHedgehog,
+    pub rumble: PuneHedgehog,
     #[serde(rename = "Ryze")]
-    ryze: PuneHedgehog,
+    pub ryze: PuneHedgehog,
     #[serde(rename = "Sejuani")]
-    sejuani: PuneHedgehog,
+    pub sejuani: PuneHedgehog,
     #[serde(rename = "Senna")]
-    senna: Qiyana,
+    pub senna: Qiyana,
     #[serde(rename = "Shaco")]
-    shaco: PuneHedgehog,
+    pub shaco: PuneHedgehog,
     #[serde(rename = "Shen")]
-    shen: HammerfestPonies,
+    pub shen: HammerfestPonies,
     #[serde(rename = "Shyvana")]
-    shyvana: PuneHedgehog,
+    pub shyvana: PuneHedgehog,
     #[serde(rename = "Singed")]
-    singed: PuneHedgehog,
+    pub singed: PuneHedgehog,
     #[serde(rename = "Sion")]
-    sion: PuneHedgehog,
+    pub sion: PuneHedgehog,
     #[serde(rename = "Sivir")]
-    sivir: PuneHedgehog,
+    pub sivir: PuneHedgehog,
     #[serde(rename = "Skarner")]
-    skarner: PuneHedgehog,
+    pub skarner: PuneHedgehog,
     #[serde(rename = "Sona")]
-    sona: HammerfestPonies,
+    pub sona: HammerfestPonies,
     #[serde(rename = "Soraka")]
-    soraka: PuneHedgehog,
+    pub soraka: PuneHedgehog,
     #[serde(rename = "Swain")]
-    swain: Brand,
+    pub swain: Brand,
     #[serde(rename = "Sylas")]
-    sylas: HammerfestPonies,
+    pub sylas: HammerfestPonies,
     #[serde(rename = "Syndra")]
-    syndra: HammerfestPonies,
+    pub syndra: HammerfestPonies,
     #[serde(rename = "TahmKench")]
-    tahm_kench: HammerfestPonies,
+    pub tahm_kench: HammerfestPonies,
     #[serde(rename = "Taliyah")]
-    taliyah: PuneHedgehog,
+    pub taliyah: PuneHedgehog,
     #[serde(rename = "Talon")]
-    talon: PuneHedgehog,
+    pub talon: PuneHedgehog,
     #[serde(rename = "Taric")]
-    taric: PuneHedgehog,
+    pub taric: PuneHedgehog,
     #[serde(rename = "Teemo")]
-    teemo: PuneHedgehog,
+    pub teemo: PuneHedgehog,
     #[serde(rename = "Thresh")]
-    thresh: PuneHedgehog,
+    pub thresh: PuneHedgehog,
     #[serde(rename = "Tristana")]
-    tristana: PuneHedgehog,
+    pub tristana: PuneHedgehog,
     #[serde(rename = "Trundle")]
-    trundle: PuneHedgehog,
+    pub trundle: PuneHedgehog,
     #[serde(rename = "Tryndamere")]
-    tryndamere: HammerfestPonies,
+    pub tryndamere: HammerfestPonies,
     #[serde(rename = "TwistedFate")]
-    twisted_fate: Brand,
+    pub twisted_fate: Brand,
     #[serde(rename = "Twitch")]
-    twitch: PuneHedgehog,
+    pub twitch: PuneHedgehog,
     #[serde(rename = "Udyr")]
-    udyr: PuneHedgehog,
+    pub udyr: PuneHedgehog,
     #[serde(rename = "Urgot")]
-    urgot: PuneHedgehog,
+    pub urgot: PuneHedgehog,
     #[serde(rename = "Varus")]
-    varus: HammerfestPonies,
+    pub varus: HammerfestPonies,
     #[serde(rename = "Vayne")]
-    vayne: HammerfestPonies,
+    pub vayne: HammerfestPonies,
     #[serde(rename = "Veigar")]
-    veigar: PuneHedgehog,
+    pub veigar: PuneHedgehog,
     #[serde(rename = "Velkoz")]
-    velkoz: PuneHedgehog,
+    pub velkoz: PuneHedgehog,
     #[serde(rename = "Vi")]
-    vi: HammerfestPonies,
+    pub vi: HammerfestPonies,
     #[serde(rename = "Viktor")]
-    viktor: HammerfestPonies,
+    pub viktor: HammerfestPonies,
     #[serde(rename = "Vladimir")]
-    vladimir: PuneHedgehog,
+    pub vladimir: PuneHedgehog,
     #[serde(rename = "Volibear")]
-    volibear: PuneHedgehog,
+    pub volibear: PuneHedgehog,
     #[serde(rename = "Warwick")]
-    warwick: PuneHedgehog,
+    pub warwick: PuneHedgehog,
     #[serde(rename = "Xayah")]
-    xayah: PuneHedgehog,
+    pub xayah: PuneHedgehog,
     #[serde(rename = "Xerath")]
-    xerath: Anivia,
+    pub xerath: Anivia,
     #[serde(rename = "XinZhao")]
-    xin_zhao: PuneHedgehog,
+    pub xin_zhao: PuneHedgehog,
     #[serde(rename = "Yasuo")]
-    yasuo: PuneHedgehog,
+    pub yasuo: PuneHedgehog,
     #[serde(rename = "Yorick")]
-    yorick: PuneHedgehog,
+    pub yorick: PuneHedgehog,
     #[serde(rename = "Yuumi")]
-    yuumi: Qiyana,
+    pub yuumi: Qiyana,
     #[serde(rename = "Zac")]
-    zac: PuneHedgehog,
+    pub zac: PuneHedgehog,
     #[serde(rename = "Zed")]
-    zed: PuneHedgehog,
+    pub zed: PuneHedgehog,
     #[serde(rename = "Ziggs")]
-    ziggs: PuneHedgehog,
+    pub ziggs: PuneHedgehog,
     #[serde(rename = "Zilean")]
-    zilean: Anivia,
+    pub zilean: Anivia,
     #[serde(rename = "Zoe")]
-    zoe: Zoe,
+    pub zoe: Zoe,
     #[serde(rename = "Zyra")]
-    zyra: HammerfestPonies,
+    pub zyra: HammerfestPonies,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PuneHedgehog {
-    id: PurpleId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: String,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<PurpleRecommended>,
+    pub id: PurpleId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<PurpleRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: String,
-    sprite: Sprite,
-    group: GroupEnum,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: GroupEnum,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Info {
-    attack: i64,
-    defense: i64,
-    magic: i64,
-    difficulty: i64,
+    pub attack: i64,
+    pub defense: i64,
+    pub magic: i64,
+    pub difficulty: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Passive {
-    name: String,
-    description: String,
-    image: Image,
+    pub name: String,
+    pub description: String,
+    pub image: Image,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PurpleRecommended {
-    champion: PurpleId,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: PurpleId,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: Option<i64>,
+    pub custom_tag: String,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
     #[serde(rename = "extenOrnnPage")]
-    exten_ornn_page: Option<bool>,
+    pub exten_ornn_page: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Block {
     #[serde(rename = "type")]
-    block_type: BlockType,
+    pub block_type: BlockType,
     #[serde(rename = "recMath")]
-    rec_math: Option<bool>,
+    pub rec_math: Option<bool>,
     #[serde(rename = "recSteps")]
-    rec_steps: Option<bool>,
+    pub rec_steps: Option<bool>,
     #[serde(rename = "minSummonerLevel")]
-    min_summoner_level: Option<i64>,
+    pub min_summoner_level: Option<i64>,
     #[serde(rename = "maxSummonerLevel")]
-    max_summoner_level: Option<i64>,
+    pub max_summoner_level: Option<i64>,
     #[serde(rename = "showIfSummonerSpell")]
-    show_if_summoner_spell: Option<IfSummonerSpell>,
+    pub show_if_summoner_spell: Option<IfSummonerSpell>,
     #[serde(rename = "hideIfSummonerSpell")]
-    hide_if_summoner_spell: Option<IfSummonerSpell>,
+    pub hide_if_summoner_spell: Option<IfSummonerSpell>,
     #[serde(rename = "appendAfterSection")]
-    append_after_section: Option<String>,
+    pub append_after_section: Option<String>,
     #[serde(rename = "visibleWithAllOf")]
-    visible_with_all_of: Option<Vec<Of>>,
+    pub visible_with_all_of: Option<Vec<Of>>,
     #[serde(rename = "hiddenWithAnyOf")]
-    hidden_with_any_of: Option<Vec<Of>>,
-    items: Vec<Item>,
+    pub hidden_with_any_of: Option<Vec<Of>>,
+    pub items: Vec<Item>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Item {
-    id: String,
-    count: i64,
+    pub id: String,
+    pub count: i64,
     #[serde(rename = "hideCount")]
-    hide_count: Option<bool>,
-    hidecount: Option<bool>,
+    pub hide_count: Option<bool>,
+    pub hidecount: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Skin {
-    id: String,
-    num: i64,
-    name: String,
-    chromas: bool,
+    pub id: String,
+    pub num: i64,
+    pub name: String,
+    pub chromas: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Spell {
-    id: String,
-    name: String,
-    description: String,
-    tooltip: String,
-    leveltip: Option<Leveltip>,
-    maxrank: i64,
-    cooldown: Vec<f64>,
+    pub id: String,
+    pub name: String,
+    pub description: String,
+    pub tooltip: String,
+    pub leveltip: Option<Leveltip>,
+    pub maxrank: i64,
+    pub cooldown: Vec<f64>,
     #[serde(rename = "cooldownBurn")]
-    cooldown_burn: String,
-    cost: Vec<i64>,
+    pub cooldown_burn: String,
+    pub cost: Vec<i64>,
     #[serde(rename = "costBurn")]
-    cost_burn: String,
-    datavalues: Datavalues,
-    effect: Vec<Option<Vec<f64>>>,
+    pub cost_burn: String,
+    pub datavalues: Datavalues,
+    pub effect: Vec<Option<Vec<f64>>>,
     #[serde(rename = "effectBurn")]
-    effect_burn: Vec<Option<String>>,
-    vars: Vec<Var>,
+    pub effect_burn: Vec<Option<String>>,
+    pub vars: Vec<Var>,
     #[serde(rename = "costType")]
-    cost_type: String,
-    maxammo: String,
-    range: Vec<i64>,
+    pub cost_type: String,
+    pub maxammo: String,
+    pub range: Vec<i64>,
     #[serde(rename = "rangeBurn")]
-    range_burn: String,
-    image: Image,
-    resource: Option<String>,
+    pub range_burn: String,
+    pub image: Image,
+    pub resource: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -482,253 +482,253 @@ pub struct Datavalues {
 
 #[derive(Serialize, Deserialize)]
 pub struct Leveltip {
-    label: Vec<String>,
-    effect: Vec<String>,
+    pub label: Vec<String>,
+    pub effect: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Var {
-    link: Link,
-    coeff: Coeff,
-    key: Key,
+    pub link: Link,
+    pub coeff: Coeff,
+    pub key: Key,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct HammerfestPonies {
-    id: FluffyId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: String,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<FluffyRecommended>,
+    pub id: FluffyId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<FluffyRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct FluffyRecommended {
-    champion: FluffyId,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: FluffyId,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: Option<String>,
-    sortrank: Option<i64>,
+    pub custom_tag: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
-    priority: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
+    pub priority: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Akali {
-    id: AkaliId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: String,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<AkaliRecommended>,
+    pub id: AkaliId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<AkaliRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AkaliRecommended {
-    champion: AkaliId,
-    title: PurpleTitle,
-    map: Map,
-    mode: Mode,
+    pub champion: AkaliId,
+    pub title: PurpleTitle,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
+    pub custom_tag: String,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
-    sortrank: Option<i64>,
+    pub required_perk: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<String>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<String>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanelCurrencyType")]
-    custom_panel_currency_type: Option<String>,
+    pub custom_panel_currency_type: Option<String>,
     #[serde(rename = "customPanelBuffCurrencyName")]
-    custom_panel_buff_currency_name: Option<String>,
+    pub custom_panel_buff_currency_name: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Anivia {
-    id: TentacledId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<AniviaRecommended>,
+    pub id: TentacledId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<AniviaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct AniviaRecommended {
-    champion: TentacledId,
-    title: String,
-    map: Map,
-    mode: Mode,
+    pub champion: TentacledId,
+    pub title: String,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: Option<i64>,
+    pub custom_tag: String,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: bool,
+    pub extension_page: bool,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "requiredPerk")]
-    required_perk: Option<String>,
+    pub required_perk: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Brand {
-    id: BrandId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<BrandRecommended>,
+    pub id: BrandId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<BrandRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct BrandRecommended {
-    champion: BrandId,
-    title: FluffyTitle,
+    pub champion: BrandId,
+    pub title: FluffyTitle,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
-    map: Map,
-    mode: Mode,
-    priority: Option<bool>,
-    blocks: Vec<Block>,
+    pub recommended_type: RecommendedType,
+    pub map: Map,
+    pub mode: Mode,
+    pub priority: Option<bool>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "customTag")]
-    custom_tag: Option<String>,
-    sortrank: Option<i64>,
+    pub custom_tag: Option<String>,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: Option<bool>,
+    pub extension_page: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
+    pub custom_panel: Option<serde_json::Value>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Qiyana {
-    id: StickyId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<Option<serde_json::Value>>,
-    enemytips: Vec<Option<serde_json::Value>>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<QiyanaRecommended>,
+    pub id: StickyId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<Option<serde_json::Value>>,
+    pub enemytips: Vec<Option<serde_json::Value>>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<QiyanaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct QiyanaRecommended {
-    champion: StickyId,
-    title: TentacledTitle,
-    map: String,
-    mode: Mode,
+    pub champion: StickyId,
+    pub title: TentacledTitle,
+    pub map: String,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: i64,
+    pub custom_tag: String,
+    pub sortrank: i64,
     #[serde(rename = "extensionPage")]
-    extension_page: bool,
+    pub extension_page: bool,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Zoe {
-    id: StickyId,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: Partype,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<QiyanaRecommended>,
+    pub id: StickyId,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: Partype,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<QiyanaRecommended>,
 }
 
 #[derive(Serialize, Deserialize)]

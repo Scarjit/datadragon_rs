@@ -31,153 +31,153 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct RammusJson {
     #[serde(rename = "type")]
-    rammus_json_type: GroupEnum,
-    format: Format,
-    version: Version,
-    data: Data,
+    pub rammus_json_type: GroupEnum,
+    pub format: Format,
+    pub version: Version,
+    pub data: Data,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Data {
     #[serde(rename = "Rammus")]
-    rammus: Rammus,
+    pub rammus: Rammus,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rammus {
-    id: ChampionEnum,
-    key: String,
-    name: String,
-    title: String,
-    image: Image,
-    skins: Vec<Skin>,
-    lore: String,
-    blurb: String,
-    allytips: Vec<String>,
-    enemytips: Vec<String>,
-    tags: Vec<Tag>,
-    partype: String,
-    info: Info,
-    stats: HashMap<String, f64>,
-    spells: Vec<Spell>,
-    passive: Passive,
-    recommended: Vec<Recommended>,
+    pub id: ChampionEnum,
+    pub key: String,
+    pub name: String,
+    pub title: String,
+    pub image: Image,
+    pub skins: Vec<Skin>,
+    pub lore: String,
+    pub blurb: String,
+    pub allytips: Vec<String>,
+    pub enemytips: Vec<String>,
+    pub tags: Vec<Tag>,
+    pub partype: String,
+    pub info: Info,
+    pub stats: HashMap<String, f64>,
+    pub spells: Vec<Spell>,
+    pub passive: Passive,
+    pub recommended: Vec<Recommended>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: Full,
-    sprite: Sprite,
-    group: GroupEnum,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: Full,
+    pub sprite: Sprite,
+    pub group: GroupEnum,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Info {
-    attack: i64,
-    defense: i64,
-    magic: i64,
-    difficulty: i64,
+    pub attack: i64,
+    pub defense: i64,
+    pub magic: i64,
+    pub difficulty: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Passive {
-    name: String,
-    description: String,
-    image: Image,
+    pub name: String,
+    pub description: String,
+    pub image: Image,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Recommended {
-    champion: ChampionEnum,
-    title: Title,
-    map: Map,
-    mode: Mode,
+    pub champion: ChampionEnum,
+    pub title: Title,
+    pub map: Map,
+    pub mode: Mode,
     #[serde(rename = "type")]
-    recommended_type: RecommendedType,
+    pub recommended_type: RecommendedType,
     #[serde(rename = "customTag")]
-    custom_tag: String,
-    sortrank: Option<i64>,
+    pub custom_tag: String,
+    pub sortrank: Option<i64>,
     #[serde(rename = "extensionPage")]
-    extension_page: bool,
+    pub extension_page: bool,
     #[serde(rename = "customPanel")]
-    custom_panel: Option<serde_json::Value>,
-    blocks: Vec<Block>,
+    pub custom_panel: Option<serde_json::Value>,
+    pub blocks: Vec<Block>,
     #[serde(rename = "useObviousCheckmark")]
-    use_obvious_checkmark: Option<bool>,
+    pub use_obvious_checkmark: Option<bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Block {
     #[serde(rename = "type")]
-    block_type: BlockType,
+    pub block_type: BlockType,
     #[serde(rename = "recMath")]
-    rec_math: bool,
+    pub rec_math: bool,
     #[serde(rename = "recSteps")]
-    rec_steps: bool,
+    pub rec_steps: bool,
     #[serde(rename = "minSummonerLevel")]
-    min_summoner_level: i64,
+    pub min_summoner_level: i64,
     #[serde(rename = "maxSummonerLevel")]
-    max_summoner_level: i64,
+    pub max_summoner_level: i64,
     #[serde(rename = "showIfSummonerSpell")]
-    show_if_summoner_spell: IfSummonerSpell,
+    pub show_if_summoner_spell: IfSummonerSpell,
     #[serde(rename = "hideIfSummonerSpell")]
-    hide_if_summoner_spell: IfSummonerSpell,
+    pub hide_if_summoner_spell: IfSummonerSpell,
     #[serde(rename = "appendAfterSection")]
-    append_after_section: Option<String>,
+    pub append_after_section: Option<String>,
     #[serde(rename = "visibleWithAllOf")]
-    visible_with_all_of: Option<Vec<String>>,
+    pub visible_with_all_of: Option<Vec<String>>,
     #[serde(rename = "hiddenWithAnyOf")]
-    hidden_with_any_of: Option<Vec<String>>,
-    items: Vec<Item>,
+    pub hidden_with_any_of: Option<Vec<String>>,
+    pub items: Vec<Item>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Item {
-    id: String,
-    count: i64,
+    pub id: String,
+    pub count: i64,
     #[serde(rename = "hideCount")]
-    hide_count: bool,
+    pub hide_count: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Skin {
-    id: String,
-    num: i64,
-    name: String,
-    chromas: bool,
+    pub id: String,
+    pub num: i64,
+    pub name: String,
+    pub chromas: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Spell {
-    id: SpellId,
-    name: String,
-    description: String,
-    tooltip: String,
-    leveltip: Leveltip,
-    maxrank: i64,
-    cooldown: Vec<f64>,
+    pub id: SpellId,
+    pub name: String,
+    pub description: String,
+    pub tooltip: String,
+    pub leveltip: Leveltip,
+    pub maxrank: i64,
+    pub cooldown: Vec<f64>,
     #[serde(rename = "cooldownBurn")]
-    cooldown_burn: String,
-    cost: Vec<i64>,
+    pub cooldown_burn: String,
+    pub cost: Vec<i64>,
     #[serde(rename = "costBurn")]
-    cost_burn: String,
-    datavalues: Datavalues,
-    effect: Vec<Option<Vec<f64>>>,
+    pub cost_burn: String,
+    pub datavalues: Datavalues,
+    pub effect: Vec<Option<Vec<f64>>>,
     #[serde(rename = "effectBurn")]
-    effect_burn: Vec<Option<String>>,
-    vars: Vec<Var>,
+    pub effect_burn: Vec<Option<String>>,
+    pub vars: Vec<Var>,
     #[serde(rename = "costType")]
-    cost_type: CostType,
-    maxammo: String,
-    range: Vec<i64>,
+    pub cost_type: CostType,
+    pub maxammo: String,
+    pub range: Vec<i64>,
     #[serde(rename = "rangeBurn")]
-    range_burn: String,
-    image: Image,
-    resource: Resource,
+    pub range_burn: String,
+    pub image: Image,
+    pub resource: Resource,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -186,15 +186,15 @@ pub struct Datavalues {
 
 #[derive(Serialize, Deserialize)]
 pub struct Leveltip {
-    label: Vec<String>,
-    effect: Vec<String>,
+    pub label: Vec<String>,
+    pub effect: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Var {
-    link: Link,
-    coeff: f64,
-    key: Key,
+    pub link: Link,
+    pub coeff: f64,
+    pub key: Key,
 }
 
 #[derive(Serialize, Deserialize)]

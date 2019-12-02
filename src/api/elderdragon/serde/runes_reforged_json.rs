@@ -31,28 +31,28 @@ pub type RunesReforgedJson = Vec<RunesReforgedJsonElement>;
 
 #[derive(Serialize, Deserialize)]
 pub struct RunesReforgedJsonElement {
-    id: i64,
-    key: Key,
-    icon: Icon,
-    name: String,
-    slots: Vec<Slot>,
+    pub id: i64,
+    pub key: Key,
+    pub icon: Icon,
+    pub name: String,
+    pub slots: Vec<Slot>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Slot {
-    runes: Vec<Rune>,
+    pub runes: Vec<Rune>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rune {
-    id: i64,
-    key: String,
-    icon: String,
-    name: String,
+    pub id: i64,
+    pub key: String,
+    pub icon: String,
+    pub name: String,
     #[serde(rename = "shortDesc")]
-    short_desc: String,
+    pub short_desc: String,
     #[serde(rename = "longDesc")]
-    long_desc: String,
+    pub long_desc: String,
 }
 
 #[derive(Serialize, Deserialize)]

@@ -31,29 +31,29 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct MapJson {
     #[serde(rename = "type")]
-    map_json_type: Type,
-    version: Version,
-    data: HashMap<String, Datum>,
+    pub map_json_type: Type,
+    pub version: Version,
+    pub data: HashMap<String, Datum>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
     #[serde(rename = "MapName")]
-    map_name: String,
+    pub map_name: String,
     #[serde(rename = "MapId")]
-    map_id: String,
-    image: Image,
+    pub map_id: String,
+    pub image: Image,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: Full,
-    sprite: Sprite,
-    group: Type,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: Full,
+    pub sprite: Sprite,
+    pub group: Type,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]

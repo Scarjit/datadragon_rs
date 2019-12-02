@@ -30,9 +30,9 @@ pub fn serialize(json: &str) -> Result<StickerJson,Error>{
 #[derive(Serialize, Deserialize)]
 pub struct StickerJson {
     #[serde(rename = "type")]
-    sticker_json_type: Type,
-    version: Version,
-    data: Data,
+    pub sticker_json_type: Type,
+    pub version: Version,
+    pub data: Data,
 }
 
 #[derive(Serialize, Deserialize)]

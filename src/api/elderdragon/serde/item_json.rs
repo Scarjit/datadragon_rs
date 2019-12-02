@@ -31,158 +31,158 @@ use std::collections::HashMap;
 #[derive(Serialize, Deserialize)]
 pub struct ItemJson {
     #[serde(rename = "type")]
-    item_json_type: GroupEnum,
-    version: Version,
-    basic: Basic,
-    data: HashMap<String, Datum>,
-    groups: Vec<Group>,
-    tree: Vec<Tree>,
+    pub item_json_type: GroupEnum,
+    pub version: Version,
+    pub basic: Basic,
+    pub data: HashMap<String, Datum>,
+    pub groups: Vec<Group>,
+    pub tree: Vec<Tree>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Basic {
-    name: String,
-    rune: Rune,
-    gold: Gold,
-    group: String,
-    description: String,
-    colloq: Colloq,
-    plaintext: String,
-    consumed: bool,
-    stacks: i64,
-    depth: i64,
+    pub name: String,
+    pub rune: Rune,
+    pub gold: Gold,
+    pub group: String,
+    pub description: String,
+    pub colloq: Colloq,
+    pub plaintext: String,
+    pub consumed: bool,
+    pub stacks: i64,
+    pub depth: i64,
     #[serde(rename = "consumeOnFull")]
-    consume_on_full: bool,
-    from: Vec<Option<serde_json::Value>>,
-    into: Vec<Option<serde_json::Value>>,
+    pub consume_on_full: bool,
+    pub from: Vec<Option<serde_json::Value>>,
+    pub into: Vec<Option<serde_json::Value>>,
     #[serde(rename = "specialRecipe")]
-    special_recipe: i64,
+    pub special_recipe: i64,
     #[serde(rename = "inStore")]
-    in_store: bool,
+    pub in_store: bool,
     #[serde(rename = "hideFromAll")]
-    hide_from_all: bool,
+    pub hide_from_all: bool,
     #[serde(rename = "requiredChampion")]
-    required_champion: String,
+    pub required_champion: String,
     #[serde(rename = "requiredAlly")]
-    required_ally: String,
-    stats: HashMap<String, i64>,
-    tags: Vec<Option<serde_json::Value>>,
-    maps: HashMap<String, bool>,
+    pub required_ally: String,
+    pub stats: HashMap<String, i64>,
+    pub tags: Vec<Option<serde_json::Value>>,
+    pub maps: HashMap<String, bool>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Gold {
-    base: i64,
-    total: i64,
-    sell: i64,
-    purchasable: bool,
+    pub base: i64,
+    pub total: i64,
+    pub sell: i64,
+    pub purchasable: bool,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Rune {
-    isrune: bool,
-    tier: i64,
+    pub isrune: bool,
+    pub tier: i64,
     #[serde(rename = "type")]
-    rune_type: RuneType,
+    pub rune_type: RuneType,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Datum {
-    name: String,
-    description: String,
-    colloq: String,
-    plaintext: String,
-    into: Option<Vec<String>>,
-    image: Image,
-    gold: Gold,
-    tags: Vec<Tag>,
-    maps: HashMap<String, bool>,
-    stats: HashMap<String, f64>,
+    pub name: String,
+    pub description: String,
+    pub colloq: String,
+    pub plaintext: String,
+    pub into: Option<Vec<String>>,
+    pub image: Image,
+    pub gold: Gold,
+    pub tags: Vec<Tag>,
+    pub maps: HashMap<String, bool>,
+    pub stats: HashMap<String, f64>,
     #[serde(rename = "inStore")]
-    in_store: Option<bool>,
-    from: Option<Vec<String>>,
-    effect: Option<Effect>,
-    depth: Option<i64>,
-    stacks: Option<i64>,
-    consumed: Option<bool>,
+    pub in_store: Option<bool>,
+    pub from: Option<Vec<String>>,
+    pub effect: Option<Effect>,
+    pub depth: Option<i64>,
+    pub stacks: Option<i64>,
+    pub consumed: Option<bool>,
     #[serde(rename = "hideFromAll")]
-    hide_from_all: Option<bool>,
+    pub hide_from_all: Option<bool>,
     #[serde(rename = "consumeOnFull")]
-    consume_on_full: Option<bool>,
+    pub consume_on_full: Option<bool>,
     #[serde(rename = "specialRecipe")]
-    special_recipe: Option<i64>,
+    pub special_recipe: Option<i64>,
     #[serde(rename = "requiredChampion")]
-    required_champion: Option<RequiredChampion>,
+    pub required_champion: Option<RequiredChampion>,
     #[serde(rename = "requiredAlly")]
-    required_ally: Option<RequiredAlly>,
+    pub required_ally: Option<RequiredAlly>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Effect {
     #[serde(rename = "Effect1Amount")]
-    effect1_amount: String,
+    pub effect1_amount: String,
     #[serde(rename = "Effect2Amount")]
-    effect2_amount: Option<String>,
+    pub effect2_amount: Option<String>,
     #[serde(rename = "Effect3Amount")]
-    effect3_amount: Option<String>,
+    pub effect3_amount: Option<String>,
     #[serde(rename = "Effect4Amount")]
-    effect4_amount: Option<String>,
+    pub effect4_amount: Option<String>,
     #[serde(rename = "Effect5Amount")]
-    effect5_amount: Option<String>,
+    pub effect5_amount: Option<String>,
     #[serde(rename = "Effect6Amount")]
-    effect6_amount: Option<String>,
+    pub effect6_amount: Option<String>,
     #[serde(rename = "Effect7Amount")]
-    effect7_amount: Option<String>,
+    pub effect7_amount: Option<String>,
     #[serde(rename = "Effect8Amount")]
-    effect8_amount: Option<String>,
+    pub effect8_amount: Option<String>,
     #[serde(rename = "Effect9Amount")]
-    effect9_amount: Option<String>,
+    pub effect9_amount: Option<String>,
     #[serde(rename = "Effect10Amount")]
-    effect10_amount: Option<String>,
+    pub effect10_amount: Option<String>,
     #[serde(rename = "Effect11Amount")]
-    effect11_amount: Option<String>,
+    pub effect11_amount: Option<String>,
     #[serde(rename = "Effect12Amount")]
-    effect12_amount: Option<String>,
+    pub effect12_amount: Option<String>,
     #[serde(rename = "Effect13Amount")]
-    effect13_amount: Option<String>,
+    pub effect13_amount: Option<String>,
     #[serde(rename = "Effect14Amount")]
-    effect14_amount: Option<String>,
+    pub effect14_amount: Option<String>,
     #[serde(rename = "Effect15Amount")]
-    effect15_amount: Option<String>,
+    pub effect15_amount: Option<String>,
     #[serde(rename = "Effect16Amount")]
-    effect16_amount: Option<String>,
+    pub effect16_amount: Option<String>,
     #[serde(rename = "Effect17Amount")]
-    effect17_amount: Option<String>,
+    pub effect17_amount: Option<String>,
     #[serde(rename = "Effect18Amount")]
-    effect18_amount: Option<String>,
+    pub effect18_amount: Option<String>,
     #[serde(rename = "Effect19Amount")]
-    effect19_amount: Option<String>,
+    pub effect19_amount: Option<String>,
     #[serde(rename = "Effect20Amount")]
-    effect20_amount: Option<String>,
+    pub effect20_amount: Option<String>,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Image {
-    full: String,
-    sprite: Sprite,
-    group: GroupEnum,
-    x: i64,
-    y: i64,
-    w: i64,
-    h: i64,
+    pub full: String,
+    pub sprite: Sprite,
+    pub group: GroupEnum,
+    pub x: i64,
+    pub y: i64,
+    pub w: i64,
+    pub h: i64,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Group {
-    id: String,
+    pub id: String,
     #[serde(rename = "MaxGroupOwnable")]
-    max_group_ownable: String,
+    pub max_group_ownable: String,
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct Tree {
-    header: Header,
-    tags: Vec<String>,
+    pub header: Header,
+    pub tags: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize)]
